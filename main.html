@@ -9,20 +9,35 @@
   
 </head>
 <body ontouchstart>
-    <div id="banner">
-       
+    <div id="banner">     
     </div>
+
+    <div id="title">       
+    </div>
+
+    <div id="foot_menu">aa</div>
     
     </body>
 <script>
     window.onload=function(){
-        $("#banner").load("src/page/banner.html" , function(){})
+        $("#banner").load("src/page/main_banner.html" , function(){})
+        $("#title").load("src/page/main_title.html" , function(){})
+        $("#foot_menu").load("src/page/main_footmenu.html" , function(){})
         }  
 </script>
 <style>
     body{
-        background-color:rgb(46, 171, 255);
+        background-image: url("static/img/binhaiharbour.bmp");
     }
-   
+    #title{
+        margin-top: 5%;
+    }
+    #foot_menu{
+        text-align: center;
+        position:fixed;
+        bottom: 0%;
+        width: 100%;
+        display: inline;
+    }
 </style>
 </html>
