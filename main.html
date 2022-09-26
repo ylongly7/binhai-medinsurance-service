@@ -27,8 +27,13 @@
     
         $("#banner").load("src/page/main_banner.html" , function(){})
         $("#title").load("src/page/main_title.html" , function(){})
-        $("#service_type").load("src/page/main_service_type.html" , function(){})
+        $("#service_type").load("src/page/main_service_type.html" , function(){
+            __serviceTypeEnterAnim()
+        })
         $("#foot_menu").load("src/page/main_footmenu.html" , function(){})
+        window.onload=function(){
+            $("body").fadeIn(1000)
+        }
         
 </script>
 <style>

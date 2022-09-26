@@ -18,4 +18,15 @@ __listenWH = function(fun){
 	}
 	
 }
- 
+
+__serviceTypeEnterAnim=function(){
+	//$("#service_type").css({"display":"none"})
+	for(var i=0;i<5;i++){		
+        $("#main_service_type"+(i+1)).css({"display":"none"})
+	}
+	let factor = [1,0.95,0.92,0.88,0.8]
+	for(var i=0;i<5;i++){		
+        $("#main_service_type"+(i+1)).fadeIn(220*factor[i]*(i+1))
+		console.log("#main_service_type"+(i+1))
+	}
+}

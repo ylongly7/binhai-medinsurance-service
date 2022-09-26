@@ -22,16 +22,24 @@
         window.onload=function(){
             wh = __getClientWH()
             $("#bgimg").height("100%")
-            $("#startbtn").css("display","block")
+            $("#startbtn").css("display","none")
         }  
         enter = function(){
             $(window).attr('location','main.html');
-        }      
+        } 
+        
+        setTimeout(function(){
+            $("body").fadeOut(300)
+        },700)
+        setTimeout(function(){
+            enter()
+        },1000)
+        
     </script>
 
     <style>
         #bgimg{
-            background-image:url("static/img/loadbg.jpg") ;
+            background-image:url("/static/img/loadbg.jpg") ;
             background-size:100% 100%;
             background-attachment:fixed;
         }
