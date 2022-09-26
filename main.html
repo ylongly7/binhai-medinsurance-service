@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="zh-cmn-Hans">
 <head>
     <meta charset="UTF-8">
@@ -15,19 +16,26 @@
     <div id="title">       
     </div>
 
-    <div id="foot_menu">aa</div>
+    <div id="service_type">        
+    </div>
     
-    </body>
+    <div id="foot_menu">
+    </div>
+    
+</body>
 <script>
-    window.onload=function(){
+    
         $("#banner").load("src/page/main_banner.html" , function(){})
         $("#title").load("src/page/main_title.html" , function(){})
+        $("#service_type").load("src/page/main_service_type.html" , function(){})
         $("#foot_menu").load("src/page/main_footmenu.html" , function(){})
-        }  
+        
 </script>
 <style>
     body{
-        background-image: url("static/img/binhaiharbour.bmp");
+        background-image: url("static/img/binhaiharbour.jpg");
+        background-size:100% 100%;
+        background-attachment:fixed;
     }
     #title{
         margin-top: 5%;
