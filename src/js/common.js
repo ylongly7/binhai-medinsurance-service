@@ -1,3 +1,5 @@
+
+
 __getClientWH=function(){
 	var height = document.documentElement.clientHeight;
 	var width = document.documentElement.clientWidth;	
@@ -30,3 +32,13 @@ __serviceTypeEnterAnim=function(){
 		console.log("#main_service_type"+(i+1))
 	}
 }
+
+ 
+String.prototype.format = function() {
+    var formatted = this;
+    for( var arg in arguments ) {
+        formatted = formatted.replace("{" + arg + "}", arguments[arg]);
+    }
+    return formatted;
+};
+ 

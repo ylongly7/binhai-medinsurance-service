@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>滨海县医保公共服务导航</title>
+    <link rel="stylesheet" href="static/css/weui.css"/>
+     
+
+    <script src="static/js/jquery-3.6.1.min.js"></script>
+ 
+    <script src="src/js/common.js"></script>
+    <script src="src/js/data/county_service.js"></script>
+  
+</head>
+<body ontouchstart class="weui-tab">
+
+<article class="weui-article">
+    
+    <section>
+     
+      <section>      
+        <section>
+       
+          
+          <p>
+            <img src="static/img/banner1.png" alt="配图">
+            <img src="static/img/banner2.png" alt="配图">
+          </p>
+        </section>
+        <section id="title">       
+        </section>
+        <section id="service_type">        
+        </section>
+        <section>
+          <h4>列表示例</h4>
+          <section>
+            <h5>原生无序列表</h5>
+            <ul>
+              <li>Elit quo illum ut voluptate possimus. Maxime</li>
+              <li>
+                Elit quo illum ut voluptate possimus. Maxime
+                <ul>
+                  <li>Elit facilis nam nam</li>
+                  <li>Elit facilis nam nam</li>
+                  <li>Elit facilis nam nam</li>
+                </ul>
+              </li>
+              <li>Elit quo illum ut voluptate possimus. Maxime</li>
+            </ul>
+          </section>
+          <section>
+            <h5>原生有序列表</h5>
+            <ol>
+              <li>Elit quo illum ut voluptate possimus. Maxime</li>
+              <li>
+                Elit quo illum ut voluptate possimus. Maxime
+                <ol>
+                  <li>Adipisicing adipisci labore deleniti</li>
+                  <li>Adipisicing adipisci labore deleniti</li>
+                  <li>Adipisicing adipisci labore deleniti</li>
+                </ol>
+              </li>
+              <li>Elit quo illum ut voluptate possimus. Maxime</li>
+            </ol>
+          </section>
+          <section>
+            <h5>原生段落列表（需要自行添加class）</h5>
+            <ol class="weui-article__list_inside">
+              <li>Elit quo illum ut voluptateElit quo illum ut voluptate possimus. Maxime</li>
+              <li>
+                Elit quo illum ut voluptate possimus. Maxime
+                <ol>
+                  <li>Adipisicing adipisci labore delenitAdipisicing adipisci labore delenitiiAdipisicing adipisci labore deleniti</li>
+                  <li>Adipisicing adipisci labore deleniti</li>
+                  <li>Adipisicing adipisci labore deleniti</li>
+                </ol>
+              </li>
+              <li>Elit quo illum ut voluptate possimus. Maxime</li>
+            </ol>
+          </section>
+          <section>
+            <h5>自定义序号列表（需要自行添加class）</h5>
+            <ol class="weui-article__list_none">
+              <li>1 Elit quo illum ut voluptateElit quo illum ut voluptate possimus. Maxime</li>
+              <li>
+                2 Elit quo illum ut voluptate possimus. Maxime
+                <ol>
+                  <li>2.1 Adipisicing adipisci labore delenitAdipisicing adipisci labore delenitiiAdipisicing adipisci labore deleniti</li>
+                  <li>2.2 Adipisicing adipisci labore deleniti</li>
+                  <li>2.3 Adipisicing adipisci labore deleniti</li>
+                </ol>
+              </li>
+              <li>3 Elit quo illum ut voluptate possimus. Maxime</li>
+            </ol>
+          </section>
+        </section>
+      </section>
+    </section>
+    <section>
+      <h2>无障碍焦点整合示例</h2>
+      <section>
+        <p class="weui-a11y-combo">
+          <input class="weui-a11y-combo__helper" aria-labelledby="txt1 txt2" type="text" readonly="" role="option">
+          <span id="txt1" class="weui-a11y-combo__content" aria-hidden="true">
+            Ipsum cum soluta laudantium aperiam rem? Accusamus nostrum itaque sint?
+          </span>
+          <a id="txt2" class="weui-a11y-combo__content weui-link weui-wa-hotarea " href="#">read more</a>
+        </p>
+      </section>
+    </section>
+  </article>
+<script>
+    $("#title").load("src/page/main_title2.html" , function(){})
+    $("#service_type").load("src/page/main_service_type2.html" , function(){
+           // __serviceTypeEnterAnim()
+        })
+</script>
+<style>
+  body{
+    /*background-color: rgb(237, 237, 237);*/
+  }
+</style>
+</body>
+</html>
