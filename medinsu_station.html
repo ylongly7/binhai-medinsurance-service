@@ -10,30 +10,55 @@
     <script src="static/js/jquery-3.6.1.min.js"></script>
  
     <script src="src/js/common.js"></script>
+    <script src="src/js/simple_gallery.js"></script>
     <script src="src/js/data/county_service.js"></script>
-  
+    <script type="text/javascript" src="//api.map.baidu.com/api?type=webgl&v=1.0&ak=LT1XXgpXo8zLOIMfCcRm16Yn7NZlzOwZ"></script>
 </head>
 <body ontouchstart class="weui-tab">
 
 <article class="weui-article">
     
-    <section>
+   
      
-      <section>      
+        <section>      
         <section id="slogan"> 
         </section>
         <section id="description">       
         </section>
         <section id="desc_img">        
         </section>
-        <section id="servicelist">             
+        <section id="servicelist">
+          服务列表             
         </section>
+
+        <section id="station_map">
+          
+        </section>
+        </article>
       </section>
-    </section>
+    
    
   </article>
 <script>
-    
+    let dataId = getUrlParam("dataId")
+ 
+    let stationdata = __county_service_list_raw[dataId]
+    console.log(dataId, stationdata)
+    $("#slogan").load("src/page/medinsu_station/slogan.html" , function(){
+        $("#station_slogan").html(stationdata["slogan"])  
+    })
+    $("#description").load("src/page/medinsu_station/description.html" , function(){
+        $("#station_name").html(stationdata["stationname"])  
+        $("#station_description").html(stationdata["description"])  
+
+    })
+    $("#desc_img").load("src/page/medinsu_station/imggallery.html" , function(){
+      initGallery("medinsu_station_gallery",["static/img/p1.png","static/img/p2.png","static/img/p3.png",])
+    })
+
+    $("#station_map").load("src/page/medinsu_station/station_map.html" , function(){
+       
+    })
 </script>
 <style>
   body{

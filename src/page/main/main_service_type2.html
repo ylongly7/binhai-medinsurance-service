@@ -1,4 +1,4 @@
-<div id="main_service_type1" class="weui-btn weui-btn_default weui-cell weui-cell_active main_service_type">
+<div id="main_service_type1" class="weui-btn weui-btn_default weui-cell weui-cell_active main_service_type" onclick="__main_service_type_jumpto(0)">
     <div class="weui-cell__bd">医保服务大厅（1个） </div>
     <div class="weui-cell__hd profile_photo">
         <img src="static/img/icon/bingfang.png" class="main_service_type_icon">  
@@ -91,6 +91,10 @@
         }
         $("#main_service_type3_sublist").html(__make_main_service_type_list(3))
       //  $("#main_service_type4_sublist").html(__make_main_service_type_list(4))
+
+      let __main_service_type_jumpto =function(dataId){
+            window.location.href="medinsu_station.html?dataId={0}".format(dataId);
+      }
 
         
 </script>
