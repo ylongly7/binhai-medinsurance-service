@@ -14,9 +14,9 @@
     <script src="src/js/data/county_service.js"></script>
     <script type="text/javascript" src="//api.map.baidu.com/api?type=webgl&v=1.0&ak=LT1XXgpXo8zLOIMfCcRm16Yn7NZlzOwZ"></script>
 </head>
-<body ontouchstart class="weui-tab">
+<body   class=" ">
 
-<article class="weui-article">
+<div class="my_article">
     
    
      
@@ -31,14 +31,14 @@
           服务列表             
         </section>
 
-        <section id="station_map">
+        <div id="station_map">
           
-        </section>
+        </div>
         </article>
       </section>
     
    
-  </article>
+    </div>
 <script>
     let dataId = getUrlParam("dataId")
  
@@ -61,9 +61,35 @@
     })
 </script>
 <style>
-  body{
-    /*background-color: rgb(237, 237, 237);*/
-  }
+ .my_article{ 
+    padding: 48px 24px;
+    padding: 48px calc(24px + constant(safe-area-inset-right)) calc(48px + constant(safe-area-inset-bottom)) calc(24px + constant(safe-area-inset-left));
+    padding: 48px calc(24px + env(safe-area-inset-right)) calc(48px + env(safe-area-inset-bottom)) calc(24px + env(safe-area-inset-left));
+    color: rgba(0,0,0,0.9);
+    color: var(--weui-FG-0);
+    font-size: 17px;
+    line-height: 1.6;
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    -webkit-user-drag: auto;
+    }
+    .my_article h2 {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+.my_article h1 {
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 48px;
+    text-align: center;
+    line-height: 1.4;
+    max-width: 100%;
+    box-sizing: border-box;
+    word-wrap: break-word;
+}
 </style>
 </body>
 </html>

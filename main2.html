@@ -21,11 +21,8 @@
   
      
        
-        <section>    
-          <p>
-            <img src="static/img/banner1.png" alt="配图">
-            <a href="guozhidazhe.html"><img src="static/img/banner2.png" alt="配图"></a>
-          </p>
+        <section id="banner_img">    
+      
         </section>
         <section id="title">       
         </section>
@@ -37,6 +34,7 @@
      
   </article>
 <script>
+    $("#banner_img").load("src/page/main/main_banner_img.html" , function(){})
     $("#title").load("src/page/main/main_title2.html" , function(){})
     $("#service_type").load("src/page/main/main_service_type2.html" , function(){
            // __serviceTypeEnterAnim()
