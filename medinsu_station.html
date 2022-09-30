@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="Pragma" content="no-cache">
+    
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
     <title>滨海县医保公共服务导航</title>
     <link rel="stylesheet" href="static/css/weui.css"/>
@@ -41,19 +42,24 @@
     </div>
 <script>
     let dataId = getUrlParam("dataId")
- 
-    let stationdata = __county_service_list_raw[dataId]
+    console.log(dataId)
+    let stationdata = medinsu_data_raw[dataId]
     console.log(dataId, stationdata)
     $("#slogan").load("src/page/medinsu_station/slogan.html" , function(){
-        $("#station_slogan").html(stationdata["slogan"])  
+       // $("#station_slogan").html(stationdata["slogan"])  
     })
     $("#description").load("src/page/medinsu_station/description.html" , function(){
-        $("#station_name").html(stationdata["stationname"])  
+        $("#station_name").html(stationdata["name"])  
         $("#station_description").html(stationdata["description"])  
 
     })
     $("#desc_img").load("src/page/medinsu_station/imggallery.html" , function(){
-      initGallery("medinsu_station_gallery",["static/img/p1.png","static/img/p2.png","static/img/p3.png",])
+      let _imgs = JSON.parse( stationdata["imgs"])
+      var imgs= []
+      for(var i=0;i<_imgs.length;i++){
+        imgs.push("static/img/station_img/"+_imgs[i])
+      }
+      initGallery("medinsu_station_gallery", imgs)
     })
 
     $("#station_map").load("src/page/medinsu_station/station_map.html" , function(){

@@ -20,25 +20,27 @@
     <embed src="static/img/town_stations.svg" type="image/svg+xml" id="map_stations" />
 
     <script>
+        let _jumpto =function(key){
+                       window.location.href="medinsu_station.html?dataId={0}".format(escape(key));
+      }
         window.onload=function(){
             let svgDOC = document.getElementById('map_stations').getSVGDocument(); 
             //console.log(svgDOC)
             let svgObj = $(svgDOC).children('svg')[0];
-            for(var i =0;i<18;i++){
-                var ele = svgDOC.getElementById("g-"+i);
-                let j=i;
-                ele.addEventListener("click", function(e) {
-                        console.log('something'+j);
-                    }, false);
-                //console.log(ele)
-            }
-           
-            // console.log(svgObj)
-            // $(svgObj).children('path').on('click', function() {console.log(10)});
-            // console.log( ($(svgObj).children("#g-yhgyy")))
-            // $('#g-yhgyy').on('click', function() {
-            //     console.log(11)
-            // });
+            for(var k in medinsu_data_raw){
+                console.log(k)
+                if(k=="县医保服务大厅"){
+                    continue;
+                }
+                var ele = svgDOC.getElementById("g-"+k);
+                ele.addEventListener("click", (function(e) {
+                        console.log("click",k);
+                        let k1 = k                        
+                        return function(){
+                            _jumpto(k1)
+                        }
+                    })(k));
+            }          
         }
         
     </script>

@@ -9,7 +9,7 @@ style="background-color: #FCF5DE;"
 
 <div id="main_service_type2" class="weui-btn weui-btn_default weui-cell weui-cell_active main_service_type close"
 style="background-color: #ECF3FB;"
-onclick="__main_service_type_toggle('main_service_type2')">
+onclick="">
     <div class="weui-cell__bd">县城医保服务代办点（2个） </div>
     <div class="weui-cell__hd profile_photo" >
         <img src="static/img/icon/zixun.png" class="main_service_type_icon">  
@@ -109,7 +109,7 @@ style="background-color: #E1E2F6;"
                 window.location.href="medinsu_stations_mapview.html"
                 return 
             }
-            window.location.href="medinsu_station.html?dataId={0}".format(dataId);
+            window.location.href="medinsu_station.html?dataId={0}".format(escape("县医保服务大厅"));
       }
 
         
