@@ -63,7 +63,10 @@
     })
 
     $("#station_map").load("src/page/medinsu_station/station_map.html" , function(){
-       
+      let postr = stationdata["point"]
+      let postrarr = postr.split(",")
+      console.log(postrarr)
+      initWithPoint(parseFloat(postrarr[0]), parseFloat(postrarr[1]))
     })
 </script>
 <style>
