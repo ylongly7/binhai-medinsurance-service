@@ -44,6 +44,7 @@ onclick="__main_service_type_jumpto(2)">
 
 <div id="main_service_type4" class="weui-btn weui-btn_default weui-cell weui-cell_active main_service_type"
 style="background-color: #DDF1DD;"
+onclick="__main_service_type_jumpto(3)"
 >
     <div class="weui-cell__bd">便民药店（21个） </div>
     <div class="weui-cell__hd profile_photo">
@@ -109,7 +110,14 @@ style="background-color: #E1E2F6;"
                 window.location.href="medinsu_stations_mapview.html"
                 return 
             }
-            window.location.href="medinsu_station.html?dataId={0}".format(escape("县医保服务大厅"));
+            if(dataId==0){
+                window.location.href="medinsu_station.html?dataId={0}".format(escape("县医保服务大厅"));
+                return
+            }
+            if(dataId==3){
+                window.location.href="medinsu_village_station.html";
+                return
+            }
       }
 
         

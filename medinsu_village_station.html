@@ -21,14 +21,18 @@
     
    
      
-        <section>      
+        <section id="store_list">      
          
       </section>
     
    
     </div>
 <script>
-     
+      $("#store_list").load("src/page/village_drugstore/store.html" , function(a,b){
+        console.log(a,b)
+        var ss = makeDrugStoreList(a)
+        $("#store_list").html(ss)
+      })
 </script>
 <style>
  .my_article{ 

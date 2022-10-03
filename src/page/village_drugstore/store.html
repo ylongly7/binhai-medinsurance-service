@@ -1,0 +1,29 @@
+<div class="weui-flex">
+    <div class="weui-flex__item"><div class="placeholder">序号：{0}</div></div>
+    <div class="weui-flex__item"><div class="placeholder">镇（区、街道）：{1}</div></div>
+    <div class="weui-flex__item"><div class="placeholder">电话：{2}</div></div>
+</div>
+<div class="weui-flex">
+    <div class="weui-flex__item"><div class="placeholder">名称：{3}</div></div>
+    <div class="weui-flex__item"><div class="placeholder">地址：{4}</div></div>
+</div>
+
+<script>
+    function makeDrugStoreList(ss){
+        var ret = ""
+        for(var k in village_drugstore){
+            let dat = village_drugstore[k]
+            console.log(dat)
+            let s1 = ss.format(
+                dat["index"],
+                dat["street"],
+                dat["tel"],
+                dat["name"],
+                dat["address"]
+                )
+            ret = ret+s1
+        }
+        return ret
+}
+
+</script>
