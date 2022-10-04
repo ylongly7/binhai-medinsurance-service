@@ -4,20 +4,25 @@
 <head>
     <meta http-equiv="Pragma" content="no-cache">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes">
     <title>滨海县医保公共服务导航</title>
     <link rel="stylesheet" href="static/css/weui.css"/>
-     
- 
+    <script src="src/js/common.js"></script>
+    <script src="static/js/jquery-3.6.1.min.js"></script>
   
 </head>
 <body ontouchstart class="weui-tab">
-     <img src="static/img/guozhidazhe.jpg" alt="">
+     <img src= "static/img/placeholder.jpg" alt="" id="aimg">
      <style>
         img{
             width: 100%;
             height: auto;
         }
      </style>
+     <script>
+         let imgPath = getUrlParam("imgPath")
+         console.log(imgPath)
+         $("#aimg").attr("src",imgPath)
+     </script>
 </body>
 </html>

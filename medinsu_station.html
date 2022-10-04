@@ -7,13 +7,14 @@
     <meta http-equiv="Cache-control" content="no-cache">    
     <meta http-equiv="Cache" content="no-cache">
     
-    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
     <title>滨海县医保公共服务导航</title>
     <link rel="stylesheet" href="static/css/weui.css"/>
      
     <script src="static/js/jquery-3.6.1.min.js"></script>
  
     <script src="src/js/common.js"></script>
+    <script src="src/js/bdmap.js"></script>
     <script src="src/js/simple_gallery.js"></script>
     <script src="src/js/data/county_service.js"></script>
     <script type="text/javascript" src="//api.map.baidu.com/api?type=webgl&v=1.0&ak=LT1XXgpXo8zLOIMfCcRm16Yn7NZlzOwZ"></script>
@@ -38,7 +39,7 @@
         <div id="station_map">
           
         </div>
-        </article>
+       
       </section>
     
    
@@ -73,7 +74,12 @@
       let postrarr = postr.split(",")
       console.log(postrarr)
       initWithPoint(parseFloat(postrarr[0]), parseFloat(postrarr[1]))
+      $("#stmap_para_lng").html(postrarr[0])
+      $("#stmap_para_lat").html(postrarr[1])
+      $("#stmap_para_address").html(stationdata["address"])
     })
+
+    //__get_location()
 </script>
 <style>
  .my_article{ 
@@ -81,13 +87,13 @@
     padding: 48px calc(24px + constant(safe-area-inset-right)) calc(48px + constant(safe-area-inset-bottom)) calc(24px + constant(safe-area-inset-left));
     padding: 48px calc(24px + env(safe-area-inset-right)) calc(48px + env(safe-area-inset-bottom)) calc(24px + env(safe-area-inset-left));
     color: rgba(0,0,0,0.9);
-    color: var(--weui-FG-0);
+    
     font-size: 17px;
     line-height: 1.6;
     word-wrap: break-word;
-    -webkit-hyphens: auto;
-    hyphens: auto;
-    -webkit-user-drag: auto;
+     
+   
+    
     }
     .my_article h2 {
     font-size: 20px;

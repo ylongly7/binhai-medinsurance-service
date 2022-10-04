@@ -50,3 +50,72 @@ function getUrlParam(name)
   if (r!=null) return unescape(r[2]);
   return null; //返回参数值
 }
+
+
+function __get_location() {
+	navigator.geolocation.getCurrentPosition(__showlatlng, __handle_error, {});
+	console.log("__get_location")
+  }
+  function __handle_error(err) {
+	console.log(err)
+	switch(err.code)  {  
+	  case err.PERMISSION_DENIED: 
+	  console.log("	  case err.PERMISSION_DENIED ") 
+		break;  
+	  case err.POSITION_UNAVAILABLE:  
+	  console.log("	  POSITION_UNAVAILABLE ") 
+		break;  
+	  case err.TIMEOUT:  
+	  console.log("	  TIMEOUT ")
+		break;  
+	  case err.UNKNOWN_ERROR:  
+	  console.log("	  UNKNOWN_ERROR ")
+		break;  
+	}
+  
+  }
+  function __showlatlng(position) {
+
+	var latitude = position.coords.latitude;//获取纬度
+  
+	var longitude = position.coords.longitude;//获取经度
+	console.log("__showlatlng",latitude, longitude)
+  
+  }
+
+function __openBaiduMap(lng, lat, address) {
+	var geolocation = new BMapGL.Geolocation();
+	geolocation.getCurrentPosition(function (result) {
+		if (this.getStatus() == BMAP_STATUS_SUCCESS) {
+			var queryString = `origin=latlng:${result.point.lat},${result.point.lng}|name:我的位置&destination=latlng:${lat},${lng}|name:${address}&mode=driving&coord_type=bd09ll`;
+			var app_url = `baidumap://map/direction?${queryString}`;
+
+			var web_url = `http://api.map.baidu.com/direction?${queryString}&region=中国&output=html`;
+
+			//尝试唤起百度地图App
+			window.location.href = app_url;
+
+			//唤起失败打开Web版百度地图
+			var startTime = Date.now();                            
+			var count = 0;
+
+			var t = setInterval(function () {
+				if (++count < 30) {
+					return;
+				}
+				if (Date.now() - startTime > 800) {
+					clearInterval(t);
+				}
+				if (!(document.hidden || document.webkitHidden)) {
+					window.location.href = web_url;
+				}
+			}, 20);
+
+			window.onblur = function () {
+				clearInterval(t);
+			};
+		} else {
+				alert("获取不到定位，请检查手机设置！");
+		}
+	});
+}
