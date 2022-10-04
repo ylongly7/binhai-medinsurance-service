@@ -1,4 +1,21 @@
 <div id="maparea" ></div>
+<a href="javascript:" role="button" id="naviToBtn" class="weui-btn weui-btn_primary">导航</a>
+
+<div>
+    <div class="weui-mask" id="iosMask" style="display: none;"></div>
+    <div role="dialog" aria-modal="true" tabindex="0" aria-hidden="true" class="weui-actionsheet" id="iosActionsheet">
+        
+        <div class="weui-actionsheet__menu">
+            <div id="current1" tabindex="0" role="button" class="weui-actionsheet__cell">腾讯地图</div>
+            <div role="button" tabindex="0" class="weui-actionsheet__cell">百度地图</div>
+            <div role="button" tabindex="0" class="weui-actionsheet__cell">高德地图</div>
+        </div>
+        <div class="weui-actionsheet__action">
+            <div role="button" tabindex="0" class="weui-actionsheet__cell" id="iosActionsheetCancel">取消</div>
+        </div>
+    </div>
+</div>
+
 <script type="text/javascript">
     // GL版命名空间为BMapGL
     // 按住鼠标右键，修改倾斜角和角度
@@ -15,10 +32,45 @@
         map.addOverlay(marker);  
         map.panTo(point)
     } 
+
+    var $iosActionsheet = $('#iosActionsheet');
+        var $iosMask = $('#iosMask');
+
+        function hideActionSheet() {
+            $iosActionsheet.removeClass('weui-actionsheet_toggle').attr('aria-hidden','true');
+            $iosMask.fadeOut(200);
+            $('#naviToBtn').trigger('focus');
+        }
+
+        $iosMask.on('click', hideActionSheet);
+        $('#iosActionsheetCancel').on('click', hideActionSheet);
+        $("#naviToBtn").on("click", function(){
+            $iosActionsheet.attr('aria-hidden','false').addClass('weui-actionsheet_toggle');
+            $iosMask.fadeIn(200);
+            setTimeout(function(){
+              $('#current1').trigger('focus');
+            },200)
+        });
+
+     
+
 </script>
 <style>
     #maparea{
         width: 100%;
         height: 200px;
     }
+    #naviToBtn{
+        margin-top: 10px;
+        background-color: #18b4ed;
+    }
+    .anchorBL{
+            display: none;
+        }
+    .BMap_cpyCtrl {
+            display: none;
+        }
+    .BMap_scaleCtrl {
+            display: block;
+        }
 </style>

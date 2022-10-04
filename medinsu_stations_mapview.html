@@ -2,7 +2,10 @@
 <html lang="zh-cmn-Hans">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">    
+    <meta http-equiv="Cache-control" content="no-cache">    
+    <meta http-equiv="Cache" content="no-cache">
     
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
     <title>滨海县医保公共服务导航</title>
@@ -28,13 +31,13 @@
             //console.log(svgDOC)
             let svgObj = $(svgDOC).children('svg')[0];
             for(var k in medinsu_data_raw){
-                console.log(k)
+                //console.log(k)
                 if(k=="县医保服务大厅"){
                     continue;
                 }
                 var ele = svgDOC.getElementById("g-"+k);
                 ele.addEventListener("click", (function(e) {
-                        console.log("click",k);
+                        //console.log("click",k);
                         let k1 = k                        
                         return function(){
                             _jumpto(k1)
@@ -49,6 +52,7 @@
             width: 100%;
             height: auto;
         }
+       
     </style>
 </body>
 </html>
