@@ -99,21 +99,21 @@ function __openBaiduMap(lng, lat, address) {
 			var startTime = Date.now();                            
 			var count = 0;
 
-			var t = setInterval(function () {
-				if (++count < 30) {
-					return;
-				}
-				if (Date.now() - startTime > 800) {
-					clearInterval(t);
-				}
-				if (!(document.hidden || document.webkitHidden)) {
-					window.location.href = web_url;
-				}
-			}, 20);
+			// var t = setInterval(function () {
+			// 	if (++count < 30) {
+			// 		return;
+			// 	}
+			// 	if (Date.now() - startTime > 800) {
+			// 		clearInterval(t);
+			// 	}
+			// 	if (!(document.hidden || document.webkitHidden)) {
+			// 		window.location.href = web_url;
+			// 	}
+			// }, 20);
 
-			window.onblur = function () {
-				clearInterval(t);
-			};
+			// window.onblur = function () {
+			// 	clearInterval(t);
+			// };
 		} else {
 				alert("获取不到定位，请检查手机设置！");
 		}
