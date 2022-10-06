@@ -19,12 +19,30 @@
     <script src="src/js/simple_gallery.js"></script>
     <script src="src/js/data/county_service.js"></script>
     <script src="src/js/data/village_services.js"></script>
+    <script src="src/page/village_drugstore/store.js"></script>
  </head>
 <body   class=" ">
 
 <div class="my_article">
     
-   
+  <div>
+    <div class="weui-mask" id="iosMask" style="display: none;"></div>
+    <div role="dialog" aria-modal="true" tabindex="0" aria-hidden="true" class="weui-actionsheet" id="iosActionsheet">
+        
+        <div class="weui-actionsheet__menu">
+            <div id="current1" tabindex="0" role="button" class="weui-actionsheet__cell">腾讯地图</div>
+            <div role="button" onclick="openAppNavi(1)" tabindex="0" class="weui-actionsheet__cell">百度地图</div>
+            <div role="button" tabindex="0" class="weui-actionsheet__cell">高德地图</div>
+        </div>
+        <div class="weui-actionsheet__action">
+            <div role="button" tabindex="0" class="weui-actionsheet__cell" id="iosActionsheetCancel">取消</div>
+        </div>
+    </div>
+</div>
+
+<div style="display: none;" id="stmap_para_lat">{0}</div>
+<div style="display: none;" id="stmap_para_lng">{1}</div>
+<div style="display: none;" id="stmap_para_address">{2}</div>
      
         <section id="store_list">      
          

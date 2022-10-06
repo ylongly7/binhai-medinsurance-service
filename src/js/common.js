@@ -32,12 +32,13 @@ __serviceTypeEnterAnim=function(){
 		console.log("#main_service_type"+(i+1))
 	}
 }
+ 
 
  
-String.prototype.format = function() {
+String.prototype.format = function(kv) {
     var formatted = this;
-    for( var arg in arguments ) {
-        formatted = formatted.replace("{" + arg + "}", arguments[arg]);
+    for( var k in kv ) {		 
+        formatted = formatted.replaceAll ("{"+k+"}", kv[k]);
     }
     return formatted;
 };
@@ -93,7 +94,7 @@ function __openBaiduMap(lng, lat, address) {
 			var web_url = `http://api.map.baidu.com/direction?${queryString}&region=中国&output=html`;
 
 			//尝试唤起百度地图App
-			window.location.href = app_url;
+			window.location.href = web_url;
 
 			//唤起失败打开Web版百度地图
 			var startTime = Date.now();                            

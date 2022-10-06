@@ -1,0 +1,87 @@
+ 
+
+<div class="weui-form-preview">
+    <div role="option" class=" ">
+        <label class="  drugstorename" id="drugstorename{0}"  >{0}</label>
+         
+    </div>
+    <div role="option" aria-labelledby="p4 js_a11y_comma p5 js_a11y_comma p6" class="weui-form-preview__bd">
+        <div id="p4" class="weui-form-preview__item">
+            <label class="weui-form-preview__label">电话</label>
+            <span class="weui-form-preview__value"  >{1}</span>
+        </div>
+        <div id="p5" class="weui-form-preview__item">
+            <label class="weui-form-preview__label">地址</label>
+            <span class="weui-form-preview__value">{2}</span>
+        </div>
+        
+    </div>
+    <div class="weui-form-preview__ft">
+        <a role="button" class="weui-form-preview__btn weui-form-preview__btn_primary" href="tel:{1}">拨号</a>
+        <a role="button" class="weui-form-preview__btn weui-form-preview__btn_primary" id="naviToBtn" >导航</a>
+    </div>
+</div>
+
+<div>
+    <div class="weui-mask" id="iosMask" style="display: none;"></div>
+    <div role="dialog" aria-modal="true" tabindex="0" aria-hidden="true" class="weui-actionsheet" id="iosActionsheet">
+        
+        <div class="weui-actionsheet__menu">
+            <div id="current1" tabindex="0" role="button" class="weui-actionsheet__cell">腾讯地图</div>
+            <div role="button" onclick="openAppNavi(1)" tabindex="0" class="weui-actionsheet__cell">百度地图</div>
+            <div role="button" tabindex="0" class="weui-actionsheet__cell">高德地图</div>
+        </div>
+        <div class="weui-actionsheet__action">
+            <div role="button" tabindex="0" class="weui-actionsheet__cell" id="iosActionsheetCancel">取消</div>
+        </div>
+    </div>
+</div>
+<div style="display: none;" id="stmap_para_lat">{0}</div>
+<div style="display: none;" id="stmap_para_lng">{1}</div>
+<div style="display: none;" id="stmap_para_address">{2}</div>
+
+<script>
+
+var $iosActionsheet = $('#iosActionsheet');
+        var $iosMask = $('#iosMask');
+
+        function hideActionSheet() {
+            $iosActionsheet.removeClass('weui-actionsheet_toggle').attr('aria-hidden','true');
+            $iosMask.fadeOut(200);
+            $('#naviToBtn').trigger('focus');
+        }
+
+        $iosMask.on('click', hideActionSheet);
+        $('#iosActionsheetCancel').on('click', hideActionSheet);
+        $("#naviToBtn").on("click", function(){
+            $iosActionsheet.attr('aria-hidden','false').addClass('weui-actionsheet_toggle');
+            $iosMask.fadeIn(200);
+            setTimeout(function(){
+              $('#current1').trigger('focus');
+            },200)
+        });
+
+    function openAppNavi(idx){
+        if (idx==1){
+            var lng = parseFloat( $("#stmap_para_lng").html())
+            var lat = parseFloat( $("#stmap_para_lat").html())
+            var address =  $("#stmap_para_address").html()
+            __openBaiduMap(lng,lat,address)
+            return;
+        }
+    }
+
+</script>
+<style>
+    .drugstorename{
+            /* display: block; */
+    overflow: hidden;
+    word-break: normal;
+    word-wrap: break-word;
+    color: rgba(0,0,0,0.9);
+    color: var(--weui-FG-0);
+    font-weight:700;
+    font-size: 1.1em;
+    
+    }
+</style>

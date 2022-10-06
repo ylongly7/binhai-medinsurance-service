@@ -17,6 +17,7 @@
     <script src="src/js/bdmap.js"></script>
     <script src="src/js/simple_gallery.js"></script>
     <script src="src/js/data/county_service.js"></script>
+    
     <script type="text/javascript" src="//api.map.baidu.com/api?type=webgl&v=1.0&ak=LT1XXgpXo8zLOIMfCcRm16Yn7NZlzOwZ"></script>
 </head>
 <body   class=" ">
@@ -39,6 +40,9 @@
         <div id="station_map">
           
         </div>
+
+        <div id="station_info">
+          </div>
        
       </section>
     
@@ -77,6 +81,18 @@
       $("#stmap_para_lng").html(postrarr[0])
       $("#stmap_para_lat").html(postrarr[1])
       $("#stmap_para_address").html(stationdata["address"])
+    })
+
+    $("#station_info") .load("src/page/medinsu_station/station_info.html",function(html){
+      html = html.format({
+      0:stationdata["name"],
+      1:stationdata["phone"],
+      2: stationdata["address"] 
+         
+      }
+        )
+      $("#station_info").html(html)
+      $("#drugstorename"+stationdata["name"]).hide()
     })
 
     //__get_location()

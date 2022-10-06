@@ -24,7 +24,7 @@
 
     <script>
         let _jumpto =function(key){
-                       window.location.href="medinsu_station.html?dataId={0}".format(escape(key));
+                       window.location.href="medinsu_station.html?dataId="+ (escape(key));
       }
         window.onload=function(){
             let svgDOC = document.getElementById('map_stations').getSVGDocument(); 

@@ -1,16 +1,8 @@
-<!-- <div class="weui-flex">
-    <div class="weui-flex__item"><div class="placeholder">序号：{ }</div></div>
-    <div class="weui-flex__item"><div class="placeholder">镇（区、街道）：{ }</div></div>
-    <div class="weui-flex__item"><div class="placeholder">电话：{ }</div></div>
-</div>
-<div class="weui-flex">
-    <div class="weui-flex__item"><div class="placeholder">名称：{ }</div></div>
-    <div class="weui-flex__item"><div class="placeholder">地址：{ }</div></div>
-</div> -->
+ 
 
 <div class="weui-form-preview">
     <div role="option" class=" ">
-        <label class="  drugstorename"  >{0}</label>
+        <label class="  drugstorename" id="drugstorename{0}"  >{0}</label>
          
     </div>
     <div role="option" aria-labelledby="p4 js_a11y_comma p5 js_a11y_comma p6" class="weui-form-preview__bd">
@@ -25,29 +17,12 @@
         
     </div>
     <div class="weui-form-preview__ft">
-        <a role="button" class="weui-form-preview__btn weui-form-preview__btn_primary" href="tel:{3}">拨号</a>
-        <a role="button" class="weui-form-preview__btn weui-form-preview__btn_primary" href="javascript:">导航</a>
+        <a role="button" class="weui-form-preview__btn weui-form-preview__btn_primary" href="tel:{1}">拨号</a>
+        <a role="button" class="weui-form-preview__btn weui-form-preview__btn_primary" id="naviToBtn" onclick="openNaviDlg('{k}')">导航</a>
     </div>
 </div>
 
-<script>
-    function makeDrugStoreList(ss){
-        var ret = ""
-        for(var k in village_drugstore){
-            let dat = village_drugstore[k]
-           // console.log(dat)
-            let s1 = ss.format(
-                dat["name"],             
-                dat["tel"],                
-                dat["address"],
-                dat["tel"]
-                )
-            ret = ret+s1
-        }
-        return ret
-}
 
-</script>
 
 <style>
     .drugstorename{
@@ -59,5 +34,6 @@
     color: var(--weui-FG-0);
     font-weight:700;
     font-size: 1.1em;
+    
     }
 </style>
