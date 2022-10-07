@@ -19,9 +19,10 @@
     <script type="text/javascript" src="//api.map.baidu.com/api?type=webgl&v=1.0&ak=LT1XXgpXo8zLOIMfCcRm16Yn7NZlzOwZ"></script>
 </head>
 <body   class=" ">
-    
+    <div class="weui-article">
+    <h1>镇级医保工作站地图导引</h1>
     <embed src="static/img/town_stations.svg" type="image/svg+xml" id="map_stations" />
-
+    </div>
     <script>
         let _jumpto =function(key){
                        window.location.href="medinsu_station.html?dataId="+ (escape(key));
@@ -48,6 +49,9 @@
         
     </script>
     <style>
+        body{
+            background-color:#F6FBFF;
+        }
         #map_stations{
             width: 100%;
             height: auto;
