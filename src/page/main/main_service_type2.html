@@ -1,7 +1,7 @@
 <div id="main_service_type1" class="weui-btn weui-btn_default weui-cell weui-cell_active main_service_type"
 style="background-color: #FCF5DE;"
  onclick="__main_service_type_jumpto(0)">
-    <div class="weui-cell__bd">医保服务大厅（1个） </div>
+    <div class="weui-cell__bd">县医保服务大厅（1个） </div>
     <div class="weui-cell__hd profile_photo">
         <img src="static/img/icon/mic1.png" class="main_service_type_icon">  
     </div>
@@ -32,7 +32,7 @@ onclick="">
 <div id="main_service_type3" class="weui-btn weui-btn_default weui-cell weui-cell_active main_service_type close"
 style="background-color: #F8E8F9;"
 onclick="__main_service_type_jumpto(2)">
-    <div class="weui-cell__bd">镇级医保工作站（16个） </div>
+    <div class="weui-cell__bd">镇级医保工作站（19个） </div>
     <div class="weui-cell__hd profile_photo">
         <img src="static/img/icon/mic3.png" class="main_service_type_icon">  
     </div>
@@ -54,6 +54,7 @@ onclick="__main_service_type_jumpto(3)"
 
 <div id="main_service_type5" class="weui-btn weui-btn_default weui-cell weui-cell_active main_service_type"
 style="background-color: #E1E2F6;"
+onclick="__main_service_type_jumpto(4)"
 >
     <div class="weui-cell__bd">村级医保工作站（N个） </div>
     <div class="weui-cell__hd profile_photo">
@@ -115,9 +116,14 @@ style="background-color: #E1E2F6;"
                 return
             }
             if(dataId==3){
-                window.location.href="medinsu_village_station.html";
+                window.location.href="medinsu_village_drugstore.html";
                 return
             }
+            if(dataId==4){
+                window.location.href="medinsu_village_servicestation.html";
+                return
+            }
+            
       }
 
         

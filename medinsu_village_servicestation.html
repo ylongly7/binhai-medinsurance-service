@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">    
+    <meta http-equiv="Cache-control" content="no-cache">    
+    <meta http-equiv="Cache" content="no-cache">
+    <meta name="format-detection" content="telephone=yes">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>滨海县医保公共服务导航</title>
+    <link rel="stylesheet" href="static/css/weui.css"/>
+     
+    <script src="static/js/jquery-3.6.1.min.js"></script>
+ 
+    <script src="src/js/common.js"></script>
+    <script src="src/js/bdmap.js"></script>
+    <script src="src/js/simple_gallery.js"></script>
+    <script src="src/js/data/county_service.js"></script>
+    <script src="src/js/data/village_services.js"></script>
+    <script src="src/page/village_drugstore/store.js"></script>
+ </head>
+<body   class=" ">
+
+<div class="my_article">
+    <h1 style="margin-bottom: 10px;">滨海县村级医保工作室简介</h1>
+    <section style=" text-indent: 2em;margin-bottom: 10px;">
+        2022年，全县新建25家村级医保工作室，办公地址位于村便民服务中心，按照省、市、县医保局制定的“15分钟医保服务圈”示范点建设标准进行建设，
+        拥有完备的硬件设施、规范的服务流程，配备1名兼职人员，
+        就近为广大村民提供参保登记、信息查询等四大类9项基本医保服务清单，真正打通医保便民服务“最后一公里”。</section>
+  <div>
+    <div class="weui-mask" id="iosMask" style="display: none;"></div>
+    <div role="dialog" aria-modal="true" tabindex="0" aria-hidden="true" class="weui-actionsheet" id="iosActionsheet">
+        
+        <div class="weui-actionsheet__menu">
+            <div id="current1" tabindex="0" role="button" class="weui-actionsheet__cell">腾讯地图</div>
+            <div role="button" onclick="openAppNavi(1)" tabindex="0" class="weui-actionsheet__cell">百度地图</div>
+            <div role="button" tabindex="0" class="weui-actionsheet__cell">高德地图</div>
+        </div>
+        <div class="weui-actionsheet__action">
+            <div role="button" tabindex="0" class="weui-actionsheet__cell" id="iosActionsheetCancel">取消</div>
+        </div>
+    </div>
+</div>
+
+<div style="display: none;" id="stmap_para_lat">{0}</div>
+<div style="display: none;" id="stmap_para_lng">{1}</div>
+<div style="display: none;" id="stmap_para_address">{2}</div>
+     
+        <section id="store_list">      
+         
+      </section>
+    
+   
+    </div>
+<script>
+      $("#store_list").load("src/page/village_drugstore/store.html" , function(ss,b){
+       // console.log(a,b)
+       
+         var ret = ""
+        for(var k in village_service_station){
+            let dat = village_service_station[k]
+           // console.log(dat)
+            let s1 = ss.format({
+                0:dat["name"],             
+                1:dat["tel"],                
+                2:dat["address"],
+                3:dat["tel"],
+                "k":dat["name"]
+                }
+                )
+            ret = ret+s1
+        }
+
+        $("#store_list").html(ret)
+      })
+</script>
+<style>
+ .my_article{ 
+    padding: 48px 24px;
+    padding: 48px calc(24px + constant(safe-area-inset-right)) calc(48px + constant(safe-area-inset-bottom)) calc(24px + constant(safe-area-inset-left));
+    padding: 48px calc(24px + env(safe-area-inset-right)) calc(48px + env(safe-area-inset-bottom)) calc(24px + env(safe-area-inset-left));
+    color: rgba(0,0,0,0.9);
+    color: var(--weui-FG-0);
+    font-size: 17px;
+    line-height: 1.6;
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    -webkit-user-drag: auto;
+    }
+    .my_article h2 {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+.my_article h1 {
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 48px;
+    text-align: center;
+    line-height: 1.4;
+    max-width: 100%;
+    box-sizing: border-box;
+    word-wrap: break-word;
+}
+</style>
+</body>
+</html>

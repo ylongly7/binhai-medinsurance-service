@@ -147,3 +147,31 @@ let village_drugstore = [
         "tel": "15189338977"
     }
 ]
+
+let village_service_station = [
+    {"index":"1","street":"东坎街道","name":"新安村","address":"新安村村委会","tel":"15161244512"},
+    {"index":"2","street":"东坎街道","name":"坎南社区","address":"坎南社区居委会","tel":"18651751949"},
+    {"index":"3","street":"坎北街道","name":"吕滩村","address":"吕滩村村委会","tel":"15950287907"},
+    {"index":"4","street":"坎北街道","name":"响坎村","address":"响坎村村委会","tel":"15949119429"},
+    {"index":"5","street":"农业园","name":"夹堆村","address":"夹堆村村委会","tel":"19962346606"},
+    {"index":"6","street":"农业园","name":"浦岗村","address":"浦岗村村委会","tel":"13813206639"},
+    {"index":"7","street":"天场镇","name":"马套村","address":"马套村村委会","tel":"14752902601"},
+    {"index":"8","street":"天场镇","name":"海峰村","address":"海峰村村委会","tel":"18261232722"},
+    {"index":"9","street":"通榆镇","name":"三元村","address":"三元村村委会","tel":"18012583629"},
+    {"index":"10","street":"正红镇","name":"獐沟社区","address":"獐沟社区居委会","tel":"15371238963"},
+    {"index":"11","street":"正红镇","name":"仁杰村","address":"仁杰村村委会","tel":"15061633656"},
+    {"index":"12","street":"蔡桥镇","name":"蔡桥社区","address":"蔡桥社区居委会","undefined":"13092168118"},
+    {"index":"13","street":"五汛镇","name":"四汛村","address":"四汛村村委会","tel":"13961910033"},
+    {"index":"14","street":"五汛镇","name":"汛西村","address":"汛西村村委会","tel":"18912585248"},
+    {"index":"15","street":"五汛镇","name":"范场村","address":"范场村村委会","tel":"18936338555"},
+    {"index":"16","street":"滨海港镇","name":"木楼村","address":"木楼村村委会","tel":"18752285410"},
+    {"index":"17","street":"滨海港经济区","name":"小街村","address":"小街村村委会","tel":"13024483608"},
+    {"index":"18","street":"滨淮镇","name":"东罾村","address":"东罾村村委会","tel":"15240347686"},
+    {"index":"19","street":"滨淮镇","name":"新岭社区","address":"新岭社区居委会","tel":"13284110283"},
+    {"index":"20","street":"八滩镇","name":"界山村","address":"界山村村委会","tel":"15366595030"},
+    {"index":"21","street":"八滩镇","name":"新街社区","address":"新街社区居委会","tel":"14762225013"},
+    {"index":"22","street":"八巨镇","name":"八巨社区","address":"八巨社区居委会","tel":"13357998349"},
+    {"index":"23","street":"八巨镇","name":"前案村","address":"前案村村委会","tel":"18252283290"},
+    {"index":"24","street":"界牌镇","name":"周庄村","address":"周庄村村委会","tel":"13961917695"},
+    {"index":"25","street":"陈涛镇","name":"辛庄村","address":"辛庄村村委会","tel":"13851117496"}
+    ]
