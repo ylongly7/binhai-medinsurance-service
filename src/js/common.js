@@ -109,3 +109,38 @@ function __openBaiduMap(lng, lat, address,idx) {
 		}
 	});
 }
+
+
+
+// 加密
+function encryptByAES (data) {
+	let aeskey="0123456789abcdef"
+	let key = CryptoJS.enc.Utf8.parse(aeskey);
+	let encryptData = CryptoJS.AES.encrypt(data, key, {
+		mode: CryptoJS.mode.ECB,
+		padding: CryptoJS.pad.Pkcs7
+	});
+	return encryptData.toString();
+}
+
+// 解密
+function decryptedByAES (data){
+	let aeskey = "0123456789abcdef";
+	let key = CryptoJS.enc.Utf8.parse(aeskey);
+	let decryptedData =  CryptoJS.AES.decrypt(data, key, {
+		mode: CryptoJS.mode.ECB,
+		padding: CryptoJS.pad.Pkcs7
+	});
+	return decryptedData.toString(CryptoJS.enc.Utf8);
+}
+
+
+function decrypHtmlByEleIds(ids){
+	for (var k in ids){
+		var h = $("#"+ids[k]).html()
+		//console.log(h)
+		h = h.trim()
+		h = decryptedByAES(h)
+		$("#"+ids[k]).html(h)
+	}
+}

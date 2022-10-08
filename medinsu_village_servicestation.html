@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="static/css/weui.css"/>
      
     <script src="static/js/jquery-3.6.1.min.js"></script>
+    <script src="static/js/crypto-js.js"></script>
  
     <script src="src/js/common.js"></script>
     <script src="src/js/bdmap.js"></script>
@@ -25,10 +26,9 @@
 
 <div class="my_article">
     <h1 style="margin-bottom: 10px;">滨海县村级医保工作室简介</h1>
-    <section style=" text-indent: 2em;margin-bottom: 10px;">
-        2022年，全县新建25家村级医保工作室，办公地址位于村便民服务中心，按照省、市、县医保局制定的“15分钟医保服务圈”示范点建设标准进行建设，
-        拥有完备的硬件设施、规范的服务流程，配备1名兼职人员，
-        就近为广大村民提供参保登记、信息查询等四大类9项基本医保服务清单，真正打通医保便民服务“最后一公里”。</section>
+    <section style=" text-indent: 2em;margin-bottom: 10px;" id="servstation_desc">
+        C8Yu4ZA/uSb5AhtXNnwodPFBzgXRDNuEFxYMc+PJgb2CKIsb7hy8Ao6TXcY7gHkv9aFLVbnsRnlfyblNuRC1XZbDokZJC9AlNSiWa0ritrb0z+99lTah3B9BBdQcYKkGGAIEMuvyBG73DFNzGjmWBjElKpnW7vC8KRBqB+geh72Vx1URw3qHjN20UhIptDuY0wH90NXmC3nssrE4YtuaKwi5wxARLKSLqDz0Fs/AksLLoAQdLLGl/MsszWUCHJibiUKTDDqPcHxWlCn2qDJhzFMt32Avhfjd99MrCq3FFl0UZzJtZmFfAbWU2utANBW2gJlGM50AbMSrVFLokrO34rQex02Vohsqpyer49EM2f+NlEScTh26IemSycQGWq8q0eoQS85rkPOkzmW1g0RRahBpo99kV5q4b3U9QO/uJEUM+ms9M6c7Zedb93TuRLzExWgJHm1qHErYnWLOpH+txeRO/d+MiN2/sYyv9aIgjqzlgyEaDZrriaVWA+Muxw/OBWTpfOYOKmtYHZopOK/A/Lf97KYsDl4kNHgDllimuXbkNhYzzlgGqBd7tNmJgXYsoH0QBn3nLCKfsjqpg0sg1Q== 
+    </section>
   <div>
     <div class="weui-mask" id="iosMask" style="display: none;"></div>
     <div role="dialog" aria-modal="true" tabindex="0" aria-hidden="true" class="weui-actionsheet" id="iosActionsheet">
@@ -55,6 +55,9 @@
    
     </div>
 <script>
+    window.onload=function(){
+        decrypHtmlByEleIds(["servstation_desc"])
+    }
       $("#store_list").load("src/page/village_drugstore/store.html" , function(ss,b){
        // console.log(a,b)
        
