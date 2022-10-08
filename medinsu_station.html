@@ -36,6 +36,10 @@
         <section id="servicelist">
                        
         </section>
+        <div id="jumptoserlist">
+
+        </div>
+        
 
         <div id="station_map">
           
@@ -58,7 +62,19 @@
     })
     $("#description").load("src/page/medinsu_station/description.html" , function(){
         $("#station_name").html(stationdata["name"])  
-        $("#station_description").html(stationdata["description"])  
+        $("#station_description").html(stationdata["description"] ) 
+
+        if("县医保服务大厅"!=dataId){
+            $("#station_name").html(stationdata["street"]+"基本情况")  
+            $("#station_name1").html(stationdata["street"]+"医保工作站简介") 
+            $("#station_description1").html(stationdata["description1"])
+        }
+        else{
+            $("#station_name1").hide()
+            $("#station_description1").hide()
+            $("#station_description").removeClass("station_description_bg")
+        }
+         
 
     })
     $("#desc_img").load("src/page/medinsu_station/imggallery.html" , function(){
@@ -72,6 +88,10 @@
     $("#servicelist").load("src/page/service_list/service_listimg_lev1.html",function(){
 
     })
+    $("#jumptoserlist").load("src/page/medinsu_station/jumptoservlist.html",function(){
+
+    })
+    
     
     $("#station_map").load("src/page/medinsu_station/station_map.html" , function(){
       let postr = stationdata["point"]

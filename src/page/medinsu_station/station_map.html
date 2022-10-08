@@ -6,9 +6,9 @@
     <div role="dialog" aria-modal="true" tabindex="0" aria-hidden="true" class="weui-actionsheet" id="iosActionsheet">
         
         <div class="weui-actionsheet__menu">
-            <div id="current1" tabindex="0" role="button" class="weui-actionsheet__cell">腾讯地图</div>
+            <div id="current1" onclick="openAppNavi(0)" tabindex="0" role="button" class="weui-actionsheet__cell">腾讯地图</div>
             <div role="button" onclick="openAppNavi(1)" tabindex="0" class="weui-actionsheet__cell">百度地图</div>
-            <div role="button" tabindex="0" class="weui-actionsheet__cell">高德地图</div>
+            <div role="button" onclick="openAppNavi(2)" tabindex="0" class="weui-actionsheet__cell">高德地图</div>
         </div>
         <div class="weui-actionsheet__action">
             <div role="button" tabindex="0" class="weui-actionsheet__cell" id="iosActionsheetCancel">取消</div>
@@ -105,13 +105,13 @@
         });
 
     function openAppNavi(idx){
-        if (idx==1){
+        
             var lng = parseFloat( $("#stmap_para_lng").html())
             var lat = parseFloat( $("#stmap_para_lat").html())
             var address =  $("#stmap_para_address").html()
-            __openBaiduMap(lng,lat,address)
+            __openBaiduMap(lng,lat,address,idx)
             return;
-        }
+        
     }
      
 
