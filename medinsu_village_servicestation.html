@@ -14,19 +14,22 @@
      
     <script src="static/js/jquery-3.6.1.min.js"></script>
     <script src="static/js/crypto-js.js"></script>
- 
+    <script src="static/js/coordtrans.js"></script>
     <script src="src/js/common.js"></script>
     <script src="src/js/bdmap.js"></script>
     <script src="src/js/simple_gallery.js"></script>
     <script src="src/js/data/county_service.js"></script>
     <script src="src/js/data/village_services.js"></script>
     <script src="src/page/village_drugstore/store.js"></script>
+
+    <script type="text/javascript" src="//api.map.baidu.com/api?type=webgl&v=1.0&ak=LT1XXgpXo8zLOIMfCcRm16Yn7NZlzOwZ"></script>
+
  </head>
 <body   class=" ">
 
 <div class="my_article">
     <h1 style="margin-bottom: 10px;">滨海县村级医保工作室简介</h1>
-    <section style=" text-indent: 2em;margin-bottom: 10px;" id="servstation_desc">
+    <section style=" text-indent: 2em;margin-bottom: 10px;display: none;" id="servstation_desc">
         C8Yu4ZA/uSb5AhtXNnwodPFBzgXRDNuEFxYMc+PJgb2CKIsb7hy8Ao6TXcY7gHkv9aFLVbnsRnlfyblNuRC1XZbDokZJC9AlNSiWa0ritrb0z+99lTah3B9BBdQcYKkGGAIEMuvyBG73DFNzGjmWBjElKpnW7vC8KRBqB+geh72Vx1URw3qHjN20UhIptDuY0wH90NXmC3nssrE4YtuaKwi5wxARLKSLqDz0Fs/AksLLoAQdLLGl/MsszWUCHJibiUKTDDqPcHxWlCn2qDJhzFMt32Avhfjd99MrCq3FFl0UZzJtZmFfAbWU2utANBW2gJlGM50AbMSrVFLokrO34rQex02Vohsqpyer49EM2f+NlEScTh26IemSycQGWq8q0eoQS85rkPOkzmW1g0RRahBpo99kV5q4b3U9QO/uJEUM+ms9M6c7Zedb93TuRLzExWgJHm1qHErYnWLOpH+txeRO/d+MiN2/sYyv9aIgjqzlgyEaDZrriaVWA+Muxw/OBWTpfOYOKmtYHZopOK/A/Lf97KYsDl4kNHgDllimuXbkNhYzzlgGqBd7tNmJgXYsoH0QBn3nLCKfsjqpg0sg1Q== 
     </section>
   <div>
@@ -34,9 +37,9 @@
     <div role="dialog" aria-modal="true" tabindex="0" aria-hidden="true" class="weui-actionsheet" id="iosActionsheet">
         
         <div class="weui-actionsheet__menu">
-            <div id="current1" tabindex="0" role="button" class="weui-actionsheet__cell">腾讯地图</div>
+            <div id="current1" onclick="openAppNavi(0)" tabindex="0" role="button" class="weui-actionsheet__cell">腾讯地图</div>
             <div role="button" onclick="openAppNavi(1)" tabindex="0" class="weui-actionsheet__cell">百度地图</div>
-            <div role="button" tabindex="0" class="weui-actionsheet__cell">高德地图</div>
+            <div role="button" onclick="openAppNavi(2)" tabindex="0" class="weui-actionsheet__cell">高德地图</div>
         </div>
         <div class="weui-actionsheet__action">
             <div role="button" tabindex="0" class="weui-actionsheet__cell" id="iosActionsheetCancel">取消</div>
@@ -44,9 +47,9 @@
     </div>
 </div>
 
-<div style="display: none;" id="stmap_para_lat">{0}</div>
-<div style="display: none;" id="stmap_para_lng">{1}</div>
-<div style="display: none;" id="stmap_para_address">{2}</div>
+<div style="display: none;" id="stmap_para_lat"></div>
+<div style="display: none;" id="stmap_para_lng"></div>
+<div style="display: none;" id="stmap_para_address"></div>
      
         <section id="store_list">      
          
@@ -70,13 +73,16 @@
                 1:dat["tel"],                
                 2:dat["address"],
                 3:dat["tel"],
-                "k":dat["name"]
+                "k":dat["name"],
+                "idx":k
                 }
                 )
             ret = ret+s1
         }
 
         $("#store_list").html(ret)
+        bindNavBtnClick(village_service_station)
+
       })
 </script>
 <style>

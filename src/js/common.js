@@ -159,5 +159,6 @@ function decrypHtmlByEleIds(ids){
 		h = h.trim()
 		h = decryptedByAES(h)
 		$("#"+ids[k]).html(h)
+		$("#"+ids[k]).show()
 	}
 }

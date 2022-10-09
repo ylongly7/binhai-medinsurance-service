@@ -21,39 +21,51 @@
     
        
     
-        function bindNavBtnClick(){
-            $("#naviToBtn0").on("click", function(){
-                var $iosActionsheet = $('#iosActionsheet');
-                var $iosMask = $('#iosMask');
+        function bindNavBtnClick(dat){
+            for(var k in dat){
+                let id = "#naviToBtn"+k
+                $(id).on("click", (function( pa){
+                    let clouser = function( ){
+                        var $iosActionsheet = $('#iosActionsheet');
+                        var $iosMask = $('#iosMask');
+                        
+                        console.log( pa)
+                        let posstr = dat[pa]["point"]
+                        let postrarr = posstr.split(",")      
+                        $("#stmap_para_lng").html(postrarr[0])
+                        $("#stmap_para_lat").html(postrarr[1])
+                        $("#stmap_para_address").html( dat[pa]["name"])
+                        
+                        function hideActionSheet() {
+                                $iosActionsheet.removeClass('weui-actionsheet_toggle').attr('aria-hidden','true');
+                                $iosMask.fadeOut(200);
+                                $('#naviToBtn').trigger('focus');
+                            }
 
-            
-                function hideActionSheet() {
-                        $iosActionsheet.removeClass('weui-actionsheet_toggle').attr('aria-hidden','true');
-                        $iosMask.fadeOut(200);
-                        $('#naviToBtn').trigger('focus');
-                    }
+                        $iosMask.on('click', hideActionSheet);
+                        $('#iosActionsheetCancel').on('click', hideActionSheet);
+                                //console.log("naviToBtn0",$iosActionsheet)
+                    
+                        $iosActionsheet.attr('aria-hidden','false').addClass('weui-actionsheet_toggle');
 
-                $iosMask.on('click', hideActionSheet);
-                $('#iosActionsheetCancel').on('click', hideActionSheet);
-                        console.log("naviToBtn0",$iosActionsheet)
-            
-                $iosActionsheet.attr('aria-hidden','false').addClass('weui-actionsheet_toggle');
-
-                $iosMask.fadeIn(200);
-                setTimeout(function(){
-                  $('#current1').trigger('focus');
-                },200)
-            });
+                        $iosMask.fadeIn(200);
+                        setTimeout(function(){
+                        $('#current1').trigger('focus');
+                        },200)
+                     }
+                     return clouser
+                })(k));
         }
+    }
 
     function openAppNavi(idx){
-        if (idx==1){
+         
             var lng = parseFloat( $("#stmap_para_lng").html())
             var lat = parseFloat( $("#stmap_para_lat").html())
             var address =  $("#stmap_para_address").html()
-            __openBaiduMap(lng,lat,address)
+            __openBaiduMap(lng,lat,address,idx)
             return;
-        }
+        
     }
 
     // function openNaviDlg(k){
