@@ -86,14 +86,18 @@ function __get_location() {
 
 function __openBaiduMap(lng, lat, address,idx) {
 	//console.log(lng,lat,address,idx)
-	
+	var bd09togcj02=coordtransform.bd09togcj02(lng, lat);
 	if (idx==0){
+		lng = bd09togcj02[0]
+		lat = bd09togcj02[1]
 		let web_url = `http://apis.map.qq.com/uri/v1/marker?marker=coord:${lat},${lng};addr:${address}`
 		 
 		window.location.href = web_url;
 		return 
 	}
 	if(idx==2){
+		lng = bd09togcj02[0]
+		lat = bd09togcj02[1]
 		let web_url = `http://uri.amap.com/marker?position=${lng},${lat}&name=${address}&coordinate=gaode&callnative=1`
 		window.location.href = web_url;
 		return

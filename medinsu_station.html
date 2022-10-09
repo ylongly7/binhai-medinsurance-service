@@ -12,9 +12,11 @@
     <link rel="stylesheet" href="static/css/weui.css"/>
      
     <script src="static/js/jquery-3.6.1.min.js"></script>
- 
+    <script src="static/js/coordtrans.js"></script>
     <script src="src/js/common.js"></script>
     <script src="src/js/bdmap.js"></script>
+
+    
     <script src="src/js/simple_gallery.js"></script>
     <script src="src/js/data/county_service.js"></script>
     
@@ -60,10 +62,10 @@
     console.log(dataId)
     let stationdata = medinsu_data_raw[dataId]
     console.log(dataId, stationdata)
-    $("#slogan").load("src/page/medinsu_station/slogan.html" , function(){
+    $("#slogan").load("src/page/medinsu_station/slogan.html"+`?v=${Math.random()}` , function(){
        // $("#station_slogan").html(stationdata["slogan"])  
     })
-    $("#description").load("src/page/medinsu_station/description.html" , function(){
+    $("#description").load("src/page/medinsu_station/description.html"+`?v=${Math.random()}` , function(){
         $("#station_name").html(stationdata["name"])  
         $("#station_description").html(stationdata["description"] ) 
 
@@ -81,7 +83,7 @@
          
 
     })
-    $("#desc_img").load("src/page/medinsu_station/imggallery.html" , function(){
+    $("#desc_img").load("src/page/medinsu_station/imggallery.html"+`?v=${Math.random()}` , function(){
       let _imgs = JSON.parse( stationdata["imgs"])
       var imgs= []
       for(var i=0;i<_imgs.length;i++){
@@ -89,15 +91,15 @@
       }
       initGallery("medinsu_station_gallery", imgs)
     })
-    $("#servicelist").load("src/page/service_list/service_listimg_lev1.html",function(){
+    $("#servicelist").load("src/page/service_list/service_listimg_lev1.html"+`?v=${Math.random()}`,function(){
 
     })
-    $("#jumptoserlist").load("src/page/medinsu_station/jumptoservlist.html",function(){
+    $("#jumptoserlist").load("src/page/medinsu_station/jumptoservlist.html"+`?v=${Math.random()}`,function(){
 
     })
     
     
-    $("#station_map").load("src/page/medinsu_station/station_map.html" , function(){
+    $("#station_map").load("src/page/medinsu_station/station_map.html"+`?v=${Math.random()}` , function(){
       let postr = stationdata["point"]
       let postrarr = postr.split(",")
       console.log(postrarr)
@@ -106,7 +108,7 @@
       $("#stmap_para_address").html(stationdata["address"])
     })
 
-    $("#station_info") .load("src/page/medinsu_station/station_info.html",function(html){
+    $("#station_info") .load("src/page/medinsu_station/station_info.html"+`?v=${Math.random()}`,function(html){
      
       html = html.format({
       0:stationdata["name"],

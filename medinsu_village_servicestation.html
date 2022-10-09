@@ -58,7 +58,7 @@
     window.onload=function(){
         decrypHtmlByEleIds(["servstation_desc"])
     }
-      $("#store_list").load("src/page/village_drugstore/store.html" , function(ss,b){
+      $("#store_list").load("src/page/village_drugstore/store.html"+`?v=${Math.random()}` , function(ss,b){
        // console.log(a,b)
        
          var ret = ""
