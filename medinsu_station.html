@@ -33,12 +33,15 @@
         </section>
         <section id="desc_img">        
         </section>
-        <section id="servicelist">
-                       
-        </section>
+
         <div id="jumptoserlist">
 
         </div>
+
+        <section id="servicelist">
+                       
+        </section>
+        
         
 
         <div id="station_map">
@@ -71,7 +74,8 @@
         }
         else{
             $("#station_name1").hide()
-            $("#station_description1").hide()
+            $("#station_description_bg1").hide()
+            $("#station_description_bg").removeClass("station_description_bg")
             $("#station_description").removeClass("station_description_bg")
         }
          
@@ -98,12 +102,12 @@
       let postrarr = postr.split(",")
       console.log(postrarr)
       initWithPoint(parseFloat(postrarr[0]), parseFloat(postrarr[1]))
-      $("#stmap_para_lng").html(postrarr[0])
-      $("#stmap_para_lat").html(postrarr[1])
+      
       $("#stmap_para_address").html(stationdata["address"])
     })
 
     $("#station_info") .load("src/page/medinsu_station/station_info.html",function(html){
+     
       html = html.format({
       0:stationdata["name"],
       1:stationdata["phone"],
@@ -113,6 +117,13 @@
         )
       $("#station_info").html(html)
       $("#drugstorename"+stationdata["name"]).hide()
+
+      let postr = stationdata["point"]
+      let postrarr = postr.split(",")    
+     
+      $("#stmap_para_lng").html(postrarr[0])
+      $("#stmap_para_lat").html(postrarr[1])
+      
     })
 
     //__get_location()

@@ -85,6 +85,19 @@ function __get_location() {
   }
 
 function __openBaiduMap(lng, lat, address,idx) {
+	//console.log(lng,lat,address,idx)
+	
+	if (idx==0){
+		let web_url = `http://apis.map.qq.com/uri/v1/marker?marker=coord:${lat},${lng};addr:${address}`
+		 
+		window.location.href = web_url;
+		return 
+	}
+	if(idx==2){
+		let web_url = `http://uri.amap.com/marker?position=${lng},${lat}&name=${address}&coordinate=gaode&callnative=1`
+		window.location.href = web_url;
+		return
+	}
 	var geolocation = new BMapGL.Geolocation();
 	geolocation.getCurrentPosition(function (result) {
 		if (this.getStatus() == BMAP_STATUS_SUCCESS) {
@@ -93,12 +106,12 @@ function __openBaiduMap(lng, lat, address,idx) {
 
 			var web_url = `http://api.map.baidu.com/direction?${queryString}&region=中国&output=html`;
 			//https://link.zhihu.com/?target=http%3A//api.map.baidu.com/marker%3Flocation%3D
-			if (idx==0){
-				web_url = `http://apis.map.qq.com/uri/v1/marker?marker=coord:${lat},${lng};addr:${address}`
-			}
-			if(idx==2){
-				web_url = `http://uri.amap.com/marker?position=${lng},${lat}&name=${address}&coordinate=gaode&callnative=1`
-			}
+			// if (idx==0){
+			// 	web_url = `http://apis.map.qq.com/uri/v1/marker?marker=coord:${lat},${lng};addr:${address}`
+			// }
+			// if(idx==2){
+			// 	web_url = `http://uri.amap.com/marker?position=${lng},${lat}&name=${address}&coordinate=gaode&callnative=1`
+			// }
 
 			//尝试唤起百度地图App
 			window.location.href = web_url;

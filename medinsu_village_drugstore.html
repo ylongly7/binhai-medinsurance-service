@@ -30,15 +30,19 @@
     <section style=" text-indent: 2em;margin-bottom: 10px;" id="drugstore_desc">i+wCUF+S16VIB1JVuKcwLK/KlLtElNaXbXy7jxA/vjyEGTmk+9ZL2bWpTkO0vadHmW6oy58SJhGUri23BMQeSPaSX23Zd6z3siEv5DyFqKGKceA3czXCGW31gdW4s4krnZMsDCAQ7+/0/aSh9+Pp0ouEXXjzzm/VcUg9Uei9SGqPrsTPtJ5uDi7F05LwOhgS85k9QhAk5K01yvHhSPlUtsNOwnyxmXAQbtJ3Xm047QCUiJJP+anvwvq3pbs/fqGcn2Sy/KFN5S9hUkTA/WqbvXt30CkG59ZOnlYGGqzs4b6XPfgloj+eEshYUCAmc2aeRuVnkSHVoIlFIPTGZOeOdW1WtLgBIIvzw5wiO1DiVJfeATXKE4+EV3aElkruDbA4nA0UsGZqr9pPjgw3Qkp6JG6GAjyS2Q9cYr6PykCM2zt1zNA5yZ5kVt2C9Qz9TW/m9k8yk363JtTkkCzdOmmnDt8wtHVcbvcsjlfAi0LDJ1ed2Q98yLGhOlnEvEA5AY9/NlF1Q8YSAa/s3+hrAn69Y8X5COLAaWOlHA6iST1+8Nw=</section>
   <div>
     <div class="weui-mask" id="iosMask" style="display: none;"></div>
-    <div role="dialog" aria-modal="true" tabindex="0" aria-hidden="true" class="weui-actionsheet" id="iosActionsheet">
-        
-        <div class="weui-actionsheet__menu">
-            <div id="current1" tabindex="0" role="button" class="weui-actionsheet__cell">腾讯地图</div>
-            <div role="button" onclick="openAppNavi(1)" tabindex="0" class="weui-actionsheet__cell">百度地图</div>
-            <div role="button" tabindex="0" class="weui-actionsheet__cell">高德地图</div>
-        </div>
-        <div class="weui-actionsheet__action">
-            <div role="button" tabindex="0" class="weui-actionsheet__cell" id="iosActionsheetCancel">取消</div>
+   
+    <div>
+        <div class="weui-mask" id="iosMask" style="display: none;"></div>
+        <div role="dialog" aria-modal="true" tabindex="0" aria-hidden="true" class="weui-actionsheet" id="iosActionsheet">
+            
+            <div class="weui-actionsheet__menu">
+                <div id="current1" onclick="openAppNavi(0)" tabindex="0" role="button" class="weui-actionsheet__cell">腾讯地图</div>
+                <div role="button" onclick="openAppNavi(1)" tabindex="0" class="weui-actionsheet__cell">百度地图</div>
+                <div role="button" onclick="openAppNavi(2)" tabindex="0" class="weui-actionsheet__cell">高德地图</div>
+            </div>
+            <div class="weui-actionsheet__action">
+                <div role="button" tabindex="0" class="weui-actionsheet__cell" id="iosActionsheetCancel">取消</div>
+            </div>
         </div>
     </div>
 </div>
@@ -60,6 +64,7 @@
         $("#store_list").html(ss)
 
         decrypHtmlByEleIds(["drugstore_desc"])
+        bindNavBtnClick()
       })
 </script>
 <style>

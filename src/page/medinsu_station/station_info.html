@@ -36,8 +36,8 @@
         </div>
     </div>
 </div>
-<div style="display: none;" id="stmap_para_lat">{0}</div>
-<div style="display: none;" id="stmap_para_lng">{1}</div>
+<div style="display: none;" id="stmap_para_lat"> </div>
+<div style="display: none;" id="stmap_para_lng"> </div>
 <div style="display: none;" id="stmap_para_address">{2}</div>
 
 <script>
@@ -53,7 +53,8 @@ var $iosActionsheet = $('#iosActionsheet');
 
         $iosMask.on('click', hideActionSheet);
         $('#iosActionsheetCancel').on('click', hideActionSheet);
-        $("#naviToBtn").on("click", function(){
+        $("#naviToBtn").on("click", function(a,b,){
+            console.log(a["currentTarget"]["id"],b)
             $iosActionsheet.attr('aria-hidden','false').addClass('weui-actionsheet_toggle');
             $iosMask.fadeIn(200);
             setTimeout(function(){

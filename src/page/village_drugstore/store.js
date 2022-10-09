@@ -9,7 +9,8 @@
                 1:dat["tel"],                
                 2:dat["address"],
                 3:dat["tel"],
-                "k":dat["name"]
+                "k":dat["name"],
+                "idx":k
                 }
                 )
             ret = ret+s1
@@ -17,25 +18,33 @@
         return ret
     }
 
-    var $iosActionsheet = $('#iosActionsheet');
-    var $iosMask = $('#iosMask');
+    
+       
+    
+        function bindNavBtnClick(){
+            $("#naviToBtn0").on("click", function(){
+                var $iosActionsheet = $('#iosActionsheet');
+                var $iosMask = $('#iosMask');
 
-   
-        function hideActionSheet() {
-            $iosActionsheet.removeClass('weui-actionsheet_toggle').attr('aria-hidden','true');
-            $iosMask.fadeOut(200);
-            $('#naviToBtn').trigger('focus');
+            
+                function hideActionSheet() {
+                        $iosActionsheet.removeClass('weui-actionsheet_toggle').attr('aria-hidden','true');
+                        $iosMask.fadeOut(200);
+                        $('#naviToBtn').trigger('focus');
+                    }
+
+                $iosMask.on('click', hideActionSheet);
+                $('#iosActionsheetCancel').on('click', hideActionSheet);
+                        console.log("naviToBtn0",$iosActionsheet)
+            
+                $iosActionsheet.attr('aria-hidden','false').addClass('weui-actionsheet_toggle');
+
+                $iosMask.fadeIn(200);
+                setTimeout(function(){
+                  $('#current1').trigger('focus');
+                },200)
+            });
         }
-
-        $iosMask.on('click', hideActionSheet);
-        $('#iosActionsheetCancel').on('click', hideActionSheet);
-        $("#naviToBtn").on("click", function(){
-            $iosActionsheet.attr('aria-hidden','false').addClass('weui-actionsheet_toggle');
-            $iosMask.fadeIn(200);
-            setTimeout(function(){
-              $('#current1').trigger('focus');
-            },200)
-        });
 
     function openAppNavi(idx){
         if (idx==1){
@@ -47,13 +56,13 @@
         }
     }
 
-    function openNaviDlg(k){
-        console.log(k)
-        $iosActionsheet.attr('aria-hidden','false').addClass('weui-actionsheet_toggle');
-            $iosMask.fadeIn(200);
-            setTimeout(function(){
-              $('#current1').trigger('focus');
-            },200)
-    }
+    // function openNaviDlg(k){
+    //     console.log(k)
+    //     $iosActionsheet.attr('aria-hidden','false').addClass('weui-actionsheet_toggle');
+    //         $iosMask.fadeIn(200);
+    //         setTimeout(function(){
+    //           $('#current1').trigger('focus');
+    //         },200)
+    // }
 
  

@@ -78,32 +78,32 @@ onclick="__main_service_type_jumpto(4)"
             });
         
         });  
-        let __main_service_type_toggle = function(id){
-            if ($("#"+id).hasClass('close')){
-                $("#"+id).toggleClass('close')              
-                $("#"+id+"_sublist").css({"display":'block'})
+        // let __main_service_type_toggle = function(id){
+        //     if ($("#"+id).hasClass('close')){
+        //         $("#"+id).toggleClass('close')              
+        //         $("#"+id+"_sublist").css({"display":'block'})
                  
-            }
-            else{                 
-                $("#"+id).addClass('close')
-                $("#"+id+"_sublist").css({"display":'none'})
-            }
-        }  
+        //     }
+        //     else{                 
+        //         $("#"+id).addClass('close')
+        //         $("#"+id+"_sublist").css({"display":'none'})
+        //     }
+        // }  
 
-        let __make_main_service_type_list = function(idx){
-            let  map = {1:county_service_list_hall,2:county_service_list_agency,3:county_service_list_station}
-            let dat = map[idx];
-            let divid = "main_service_type"+idx+"_sublist";
-            var html = ""
-            for (var i=0;i<dat.length;i++){
-                let cell = "<div class='weui-btn weui-btn_default weui-cell weui-cell_active main_service_type_sublist' \
-                id='main_service_type{0}_sublist_cell{1}'\
-                >{2} </div>".format(idx,i+1,dat[i]['stationname'])
-                html+=cell;
-            }
-            return html
-        }
-        $("#main_service_type3_sublist").html(__make_main_service_type_list(3))
+        // let __make_main_service_type_list = function(idx){
+        //     let  map = {1:county_service_list_hall,2:county_service_list_agency,3:county_service_list_station}
+        //     let dat = map[idx];
+        //     let divid = "main_service_type"+idx+"_sublist";
+        //     var html = ""
+        //     for (var i=0;i<dat.length;i++){
+        //         let cell = "<div class='weui-btn weui-btn_default weui-cell weui-cell_active main_service_type_sublist' \
+        //         id='main_service_type{0}_sublist_cell{1}'\
+        //         >{2} </div>".format(idx,i+1,dat[i]['stationname'])
+        //         html+=cell;
+        //     }
+        //     return html
+        // }
+      //  $("#main_service_type3_sublist").html(__make_main_service_type_list(3))
       //  $("#main_service_type4_sublist").html(__make_main_service_type_list(4))
 
       let __main_service_type_jumpto =function(dataId){
