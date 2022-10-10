@@ -91,9 +91,11 @@
       }
       initGallery("medinsu_station_gallery", imgs)
     })
-    $("#servicelist").load("src/page/service_list/service_listimg_lev1.html"+`?v=${Math.random()}`,function(){
-
-    })
+    $("#servicelist").load("src/page/service_list/service_listimg_lev_city0.html"+`?v=${Math.random()}`,function()    {})
+    if("县医保服务大厅"!=dataId){
+      $("#servicelist").load("src/page/service_list/service_listimg_lev1.html"+`?v=${Math.random()}`,function()    {})
+    }
+ 
     $("#jumptoserlist").load("src/page/medinsu_station/jumptoservlist.html"+`?v=${Math.random()}`,function(){
 
     })
