@@ -25,7 +25,7 @@
     </div>
     <script>
         let _jumpto =function(key){
-                       window.location.href="medinsu_station.html?dataId="+ (escape(key));
+                       window.location.href="medinsu_station.html?dataId="+ (escape(key))+`&v=${Math.random()}`;
       }
         window.onload=function(){
             let svgDOC = document.getElementById('map_stations').getSVGDocument(); 
