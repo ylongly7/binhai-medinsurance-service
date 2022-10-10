@@ -18,50 +18,82 @@
   
 </head>
 <body ontouchstart class="weui-tab">
-    <div id="banner">     
-    </div>
+  <div id="cover">
+    <a href="javascript:" class="weui-btn weui-btn_primary" id="startbtn" onclick="hideCover()">点击查看详情</a>
+  </div>
 
-    <div id="title">       
-    </div>
-
-    <div id="service_type">        
-    </div>
+<div class="weui-article" id="main_content" >
     
-    <div id="foot_menu">
-    </div>
+  
+     
+       
+        <section id="banner_img">    
+      
+        </section>
+        <section id="title">       
+        </section>
+        <section id="service_type">        
+        </section>
+         
+      
     
-</body>
+     
+      </div>
 <script>
-    
-        $("#banner").load("src/page/main_banner.html" , function(){})
-        $("#title").load("src/page/main_title.html" , function(){})
-        $("#service_type").load("src/page/main_service_type.html" , function(){
-            __serviceTypeEnterAnim()
-        })
-        $("#foot_menu").load("src/page/main_footmenu.html" , function(){})
-        window.onload=function(){
-            $("body").fadeIn(1000)
-        }
-        
+  setTimeout(function(){
+
+    $("#banner_img").load("src/page/main/main_banner_img.html" , function(){})
+    $("#title").load("src/page/main/main_title2.html" , function(){})
+    $("#service_type").load("src/page/main/main_service_type2.html" , function(){  })
+
+  }, 300)
+
+  function hideCover(){
+    $("#cover").fadeOut(400)
+    $("#main_content").show()
+  }
+   
 </script>
-
-
-
 <style>
-    body{
-        background-image: url("static/img/binhaiharbour.jpg");
-        background-size:100% 100%;
-        background-attachment:fixed;
-    }
-    #title{
-        margin-top: 2%;
-    }
-    #foot_menu{
-        text-align: center;
-        position:fixed;
-        bottom: 0%;
-        width: 100%;
-        display: inline;
-    }
+  body{
+    background-color:#F6FBFF;
+  }
+  .weui-article{
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+  #cover{
+    width:100%;
+    height:100%;
+    position:absolute;
+    left:0;
+    top:0;
+    z-index:998;
+    opacity: 1;
+    background-image:url("static/img/loadbg.jpg");     
+   
+    background-size:100% 100%;
+    background-attachment:fixed;
+
+    display:none;
+  }
+  #startbtn{
+    top: 70%;
+    background-color: rgb(4, 39, 212);
+    box-shadow: 5px 5px 5px #10008d;
+    border-radius: 50px;
+    border-width: 0px;
+  }
+  #startbtn:active{
+    border-radius: 50px;
+  }
+  #main_content{
+    top: 0;
+    left: 0;
+    position:absolute;
+    display: block;
+  
+  }
 </style>
+</body>
 </html>
