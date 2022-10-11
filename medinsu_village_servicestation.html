@@ -86,7 +86,7 @@
 
         for (var k in village_service_station){
             $("#store_imgs"+k).show()
-            $("#store_imgs"+k).attr("href", "view_village_img.html?idx="+k)
+            $("#store_imgs"+k).attr("href", "view_village_img.html?idx="+k+`&v=${Math.random()}`)
         }
       })
 </script>
