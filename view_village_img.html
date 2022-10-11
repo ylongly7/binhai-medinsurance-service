@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <title>滨海县医保公共服务导航</title>
+    <link rel="stylesheet" href="static/css/weui.css"/>
+    <script src="src/js/common.js"></script>
+    <script src="static/js/jquery-3.6.1.min.js"></script>
+    <script src="src/js/data/village_services.js"></script>
+    
+  
+</head>
+<body ontouchstart class="my_article">
+     <!-- <img src= "static/img/placeholder.jpg" alt="" id="aimg"> -->
+     <style>
+
+        body{
+            background-color:#F6FBFF;
+        }
+
+        .villageimg{
+            width: 100%;
+            height: auto;
+          
+        }
+
+        .my_article{ 
+            padding: 48px 24px;
+            padding: 48px calc(24px + constant(safe-area-inset-right)) calc(48px + constant(safe-area-inset-bottom)) calc(24px + constant(safe-area-inset-left));
+            padding: 48px calc(24px + env(safe-area-inset-right)) calc(48px + env(safe-area-inset-bottom)) calc(24px + env(safe-area-inset-left));
+            color: rgba(0,0,0,0.9);
+            
+            font-size: 17px;
+            line-height: 1.6;
+            word-wrap: break-word;
+          
+         }
+
+         .my_article h1 {
+            font-size: 22px;
+            font-weight: 500;
+            margin-bottom: 12px;
+            text-align: center;
+            line-height: 1.4;
+            max-width: 100%;
+            box-sizing: border-box;
+            word-wrap: break-word;
+        }
+     </style>
+     <script>
+         let idx = getUrlParam("idx")
+         console.log(idx)
+         //$("#aimg").attr("src",idx)
+         let dat =   village_service_station [idx]
+         console.log(dat)
+         var html = `<h1>${dat["name"]}医保工作室现场图片</h1>`
+         var imgsarr = eval(dat["imgs"])
+         for (var k in imgsarr){
+            var h =  `<img class="villageimg" src= "static/img/village_img/${imgsarr[k]}">`
+            html=html+h
+         }
+         //console.log(html)
+         $("body").append(html)
+     </script>
+</body>
+</html>
