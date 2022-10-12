@@ -37,8 +37,9 @@ __serviceTypeEnterAnim=function(){
  
 String.prototype.format = function(kv) {
     var formatted = this;
-    for( var k in kv ) {		 
-        formatted = formatted.replaceAll ("{"+k+"}", kv[k]);
+    for( var k in kv ) {
+		let reg = new RegExp("\\{"+k+"\\}","g")		 
+        formatted = formatted.replaceAll (reg, kv[k]);
     }
     return formatted;
 };
