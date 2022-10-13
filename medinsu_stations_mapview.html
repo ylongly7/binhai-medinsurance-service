@@ -19,6 +19,11 @@
     <script type="text/javascript" src="//api.map.baidu.com/api?type=webgl&v=1.0&ak=LT1XXgpXo8zLOIMfCcRm16Yn7NZlzOwZ"></script>
 </head>
 <body   class=" ">
+
+    <div style="padding-left: 20%;padding-right: 20%;">
+        <img class="weui-article" src="static/img/circle-fu.png" id="circleimg"> </img>
+        </div>
+
     <div class="weui-article">
     <h1>镇级医保工作站地图导引</h1>
     <embed src="static/img/town_stations.svg" type="image/svg+xml" id="map_stations" />
@@ -51,11 +56,29 @@
     <style>
         body{
             background-color:#F6FBFF;
+
+            background-image:url("static/img/cloudbg.png");     
+        
+        background-size:100% 100%;
+        background-attachment:fixed;
         }
         #map_stations{
             width: 100%;
             height: auto;
         }
+
+        #circleimg{
+            width:60%;
+            height:auto;
+            text-align: center;
+            position:fixed;
+        padding: 0;
+        
+            top:50%;
+            z-index:-1;
+            background-position:center center;
+            display: block; 
+    }
        
     </style>
 </body>
