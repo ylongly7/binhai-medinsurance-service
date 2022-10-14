@@ -53,17 +53,22 @@
 <div style="display: none;" id="stmap_para_lng"></div>
 <div style="display: none;" id="stmap_para_address"></div>
      
+        <section id="village_serv_list">      
+                
+        </section>
+
         <section id="store_list">      
          
       </section>
     
-   
     </div>
 <script>
     
     window.onload=function(){
         decrypHtmlByEleIds(["servstation_desc"])
     }
+        $("#village_serv_list").load("src/page/service_list/service_listimg_lev_village.html"+`?v=${Math.random()}`,function(){})
+
       $("#store_list").load("src/page/village_drugstore/store.html"+`?v=${Math.random()}` , function(ss,b){
        // console.log(a,b)
        

@@ -1,15 +1,19 @@
  
    
     <div class="weui-flex  " id="footmenucontent">
-        <div class="weui-flex__item">
-            <a href="javascript:;" role="button" class="weui-btn weui-btn_default bottombtn" id="js_btn1">1</a>
+        <div class="weui-flex__item" onclick="window.location.href='regulation.html'">
+            <a href="javascript:;" role="button" class="weui-btn weui-btn_default bottombtn bottombtn_reg"
+            
+            id="js_btn1">管理制度</a>
         </div>
-        <div class="weui-flex__item">
-            <a href="javascript:;" role="button" class="weui-btn weui-btn_default bottombtn" id="js_btn2">2</a>
+        <div class="weui-flex__item"  onclick="window.location.href='view_reg_tel.html'">
+            <a href="javascript:;" role="button" class="weui-btn weui-btn_default bottombtn bottombtn_tel"
+            
+            id="js_btn2">监督电话</a>
         </div>
-        <div class="weui-flex__item">
+        <!-- <div class="weui-flex__item">
             <a href="javascript:;" role="button" class="weui-btn weui-btn_default bottombtn" id="js_btn3">3</a>
-        </div>
+        </div> -->
     </div>
     </div>
 <style>
@@ -17,14 +21,32 @@
         padding-bottom: 10;
         padding-left: 10;
         padding-right: 10;
-        background: linear-gradient(to top,#0051bc,rgba(50, 115, 255, 0));
+        /* background: linear-gradient(to top,#0051bc,rgba(50, 115, 255, 0)); */
     }
     .bottombtn{
-        width: 92%;
+        width: 80%;
         font-size:small;
-        color: rgb(70, 112, 251);
+        color: rgb(0, 0, 0);
         background-color: rgba(255, 255, 255, 0.858);
         margin-bottom: 4%;
+       
+       
+        padding: 2px;
+        margin-top: 8px;
+        
+        /* background-color: #aaeeff; */
+        border-radius: 50px;
+        box-shadow: 2px 4px 4px 0px rgba(94, 94, 94, 0.405);
+    }
+
+    .bottombtn::after{
+       
+       border-radius: 50px;
+   }
+    .bottombtn_reg{
+        background-color:#d4e6f895
+    }
+    .bottombtn_tel{
+        background-color:#ffe5dbae
     }
 </style>
- 

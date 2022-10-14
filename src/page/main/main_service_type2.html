@@ -10,7 +10,7 @@
 <div id="main_service_type2" class="weui-btn weui-btn_default weui-cell weui-cell_active main_service_type  "
 style="background-color: #ECF3FB82;"
 onclick="">
-    <div class="weui-cell__bd">县城医保服务代办点（2个） </div>
+    <div class="weui-cell__bd">县城医保服务代办点（2个）（建设中） </div>
     <div class="weui-cell__hd profile_photo" >
         <img src="static/img/icon/mic2.png" class="main_service_type_icon">  
     </div>
@@ -42,15 +42,6 @@ onclick="__main_service_type_jumpto(2)">
    
 </div> -->
 
-<div id="main_service_type4" class="weui-btn weui-btn_default weui-cell weui-cell_active main_service_type"
-style="background-color: #DDF1DD82;"
-onclick="__main_service_type_jumpto(3)"
->
-    <div class="weui-cell__bd">便民药店（21个） </div>
-    <div class="weui-cell__hd profile_photo">
-        <img src="static/img/icon/mic4.png" class="main_service_type_icon">  
-    </div>
-</div>
 
 <div id="main_service_type5" class="weui-btn weui-btn_default weui-cell weui-cell_active main_service_type"
 style="background-color: #E1E2F682;"
@@ -61,6 +52,18 @@ onclick="__main_service_type_jumpto(4)"
         <img src="static/img/icon/mic5.png" class="main_service_type_icon">  
     </div>
 </div>
+
+<div id="main_service_type4" class="weui-btn weui-btn_default weui-cell weui-cell_active main_service_type"
+style="background-color: #DDF1DD82;"
+onclick="__main_service_type_jumpto(3)"
+>
+    <div class="weui-cell__bd">便民药店（21个） </div>
+    <div class="weui-cell__hd profile_photo">
+        <img src="static/img/icon/mic4.png" class="main_service_type_icon">  
+    </div>
+</div>
+
+
 
 <script>
     $(function(){
@@ -141,6 +144,9 @@ onclick="__main_service_type_jumpto(4)"
         /* background-color: #aaeeff; */
         border-radius: 50px;
         box-shadow: 2px 4px 4px 0px rgba(94, 94, 94, 0.405);
+    }
+    #main_service_type2{
+        font-size: 16px;
     }
     
     .main_service_type::after{

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <title>滨海县医保公共服务导航</title>
+    <link rel="stylesheet" href="static/css/weui.css"/>
+    <script src="src/js/common.js"></script>
+    <script src="static/js/jquery-3.6.1.min.js"></script>
+    <script src="src/js/data/village_services.js?v=1000001"></script>
+    
+  
+</head>
+<body ontouchstart class="my_article">
+    <div id="imglist"></div>
+     <style>
+
+        body{
+            background-image:url("static/img/cloudbg.png");     
+        
+        background-size:100% 100%;
+        background-attachment:fixed;
+        }
+
+        .villageimg{
+            width: 100%;
+            height: auto;
+          
+        }
+
+        .my_article{ 
+            padding: 48px 24px;
+            padding: 48px calc(24px + constant(safe-area-inset-right)) calc(48px + constant(safe-area-inset-bottom)) calc(24px + constant(safe-area-inset-left));
+            padding: 48px calc(24px + env(safe-area-inset-right)) calc(48px + env(safe-area-inset-bottom)) calc(24px + env(safe-area-inset-left));
+            color: rgba(0,0,0,0.9);
+            
+            font-size: 17px;
+            line-height: 1.6;
+            word-wrap: break-word;
+          
+         }
+
+         .my_article h1 {
+            font-size: 22px;
+            font-weight: 500;
+            margin-bottom: 12px;
+            text-align: center;
+            line-height: 1.4;
+            max-width: 100%;
+            box-sizing: border-box;
+            word-wrap: break-word;
+        }
+
+        #circleimg{
+            width:60%;
+            height:auto;
+            text-align: center;
+            position:fixed;
+            padding: 0;
+        
+            top:50%;
+            z-index:-1;
+            background-position:center center;
+            display: block; 
+        }
+     </style>
+    
+</body>
+
+<script>
+    let imgs = getUrlParam("imgs")
+    console.log(imgs)
+    //$("#aimg").attr("src",idx)
+    var imgsarr =   eval(imgs)
+    console.log(imgsarr)
+    var html = ``
+   
+    for (var k in imgsarr){
+       var h =  `<img class="villageimg" src= "static/img/reg_img/${imgsarr[k]}">`
+       html=html+h
+    }
+    console.log(html)
+    $("#imglist").html(html)
+</script>
+</html>

@@ -24,10 +24,41 @@
         <img class="weui-article" src="static/img/circle-fu.png" id="circleimg"> </img>
         </div>
 
-    <div class="weui-article">
+    <div class="weui-article my_article">
     <h1>镇级医保工作站地图导引</h1>
     <embed src="static/img/town_stations.svg" type="image/svg+xml" id="map_stations" />
     </div>
+
+    <div class="weui-cell weui-cell_active myweui-cell"  >
+        <div class="weui-cell__hd profile_photo hronimg">
+            <img src="static/img/icon/horn.png">
+        </div>
+        <div class="weui-cell__bd">
+          
+            <p  class="service_mob">请点击镇（区、街道）名称进入服务导航</p>
+        </div>
+      
+    </div>
+    <style>
+        .hronimg{
+            margin-right: 15px;
+             
+        }
+        .service_mob{
+            color: rgb(8, 0, 235);
+        }
+        .redfont{
+            color: rgb(243, 4, 4);
+        }
+        .weui-cell::before{
+            display: none;
+        }
+        .myweui-cell{
+            padding-top: 0px;
+            padding-left: 5%;
+        }
+    </style>
+
     <script>
         let _jumpto =function(key){
                        window.location.href="medinsu_station.html?dataId="+ (escape(key))+`&v=${Math.random()}`;
@@ -65,6 +96,9 @@
         #map_stations{
             width: 100%;
             height: auto;
+        }
+        .my_article{
+            padding-bottom: 0px;
         }
 
         #circleimg{

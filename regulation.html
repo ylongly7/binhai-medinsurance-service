@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">    
+    <meta http-equiv="Cache-control" content="no-cache">    
+    <meta http-equiv="Cache" content="no-cache">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>滨海县医保公共服务导航</title>
+    <link rel="stylesheet" href="static/css/weui.css"/>
+     
+
+    <script src="static/js/jquery-3.6.1.min.js"></script>
+ 
+    <script src="src/js/common.js"></script>
+    <script src="src/js/data/county_service.js"></script>
+  
+</head>
+<body ontouchstart class="weui-tab">
+    <div style="padding: 20%;">
+        <img class="weui-article" src="static/img/circle-fu.png" id="circleimg"> </img>
+        </div>
+<div id="main_service_type1" class="weui-btn weui-btn_default weui-cell weui-cell_active main_service_type   main_service_type_bg1"
+ 
+ onclick="___reg_type_jumpto(0)">
+    <div class="weui-cell__bd">十项制度 </div>
+    
+</div>
+
+<div id="main_service_type2" class="weui-btn weui-btn_default weui-cell weui-cell_active main_service_type  "
+style="background-color: #ECF3FB82;"
+onclick="___reg_type_jumpto(1)">
+    <div class="weui-cell__bd">十项禁令</div>
+    
+</div>
+ 
+ 
+
+ 
+
+<div id="main_service_type3" class="weui-btn weui-btn_default weui-cell weui-cell_active main_service_type  "
+style="background-color: #F8E8F982;"
+onclick="___reg_type_jumpto(2)">
+    <div class="weui-cell__bd">基层管理制度</div>
+   
+</div>
+
+ 
+
+
+<div id="main_service_type5" class="weui-btn weui-btn_default weui-cell weui-cell_active main_service_type"
+style="background-color: #E1E2F682;"
+onclick="___reg_type_jumpto(3)"
+>
+    <div class="weui-cell__bd">四提前五步曲</div>
+     
+</div>
+
+ 
+
+
+
+<script>
+     function ___reg_type_jumpto(idx){
+        var imgsarr = []
+        switch(idx){
+            case 0:{
+                for(var i=0;i<10;i++){
+                    imgsarr.push(`reg10-${i}.png`)
+                }
+            }break
+            case 1:{imgsarr.push("reg-ban.png")}break
+            case 2:{imgsarr.push("reg-primary-lev.png")}break
+            case 3:{imgsarr.push("reg-4ahead.png")}break
+        }
+
+        let ss = JSON.stringify(imgsarr)
+        window.location.href = `view_reg_img.html?v=${Math.random()}&imgs=${ss}`
+     }
+
+        
+</script>
+ </body>
+</html>
+<style>
+
+body{
+    /* background-color:#F6FBFF; */
+    background-image:url("static/img/cloudbg.png");     
+        
+        background-size:100% 100%;
+        background-attachment:fixed;
+        margin-top: 25%;
+  }
+
+    .main_service_type{
+        width: 50%;
+        height: 15%;
+        padding: 15px;
+        margin-top: 15px;
+        
+      
+        /* background-color: #aaeeff; */
+        border-radius: 50px;
+        box-shadow: 2px 4px 4px 0px rgba(94, 94, 94, 0.405);
+    }
+    #main_service_type2{
+        font-size: 16px;
+    }
+    
+    .main_service_type::after{
+       
+        border-radius: 50px;
+    }
+     
+    .main_service_type_icon{
+        background-size: 10px 10px;
+        max-height: 30px;
+        text-align: left;
+    }
+    .weui-cell::before{
+        display: none;
+        height: 0;
+    }
+    .main_service_type_sublist{
+        width: 80%;
+        height: 10%;
+        padding: 8px;
+        margin-top: 8px;
+        vertical-align: top;
+        float: right;
+        text-align: left;
+        /* background-color: rgba(240, 255, 255, 0.833); */
+    }
+    .main_service_type_bg1{
+      background-color: #ffdfd682; 
+      
+    }
+
+    #circleimg{
+    width:60%;
+    height:auto;
+    text-align: center;
+    position:fixed;
+   padding: 0;
+   
+    top:50%;
+    z-index:-1;
+    background-position:center center;
+    display: block; 
+     
+  }
+     
+</style>
