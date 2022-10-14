@@ -72,6 +72,12 @@
 
         decrypHtmlByEleIds(["drugstore_desc"])
         bindNavBtnClick(village_drugstore)
+
+        for (var k in village_service_station){
+            $("#store_imgs"+k).show()
+            $("#store_imgs"+k).attr("href", "view_drugstore_img.html?idx="+k+`&v=${Math.random()}`)
+        }
+
       })
 </script>
 <style>
