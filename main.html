@@ -48,10 +48,10 @@
 <script>
   setTimeout(function(){
 
-    $("#banner_img").load("src/page/main/main_banner_img.html" , function(){})
-    $("#title").load("src/page/main/main_title2.html" , function(){})
-    $("#service_type").load("src/page/main/main_service_type2.html" , function(){  })
-    $("#footmenu").load("src/page/main/main_footmenu.html" , function(){  })
+    $("#banner_img").load("src/page/main/main_banner_img.html"+"?v="+Math.random() , function(){})
+    $("#title").load("src/page/main/main_title2.html"+"?v="+Math.random() , function(){})
+    $("#service_type").load("src/page/main/main_service_type2.html"+"?v="+Math.random() , function(){  })
+    $("#footmenu").load("src/page/main/main_footmenu.html"+"?v="+Math.random() , function(){  })
   }, 300)
 
   function hideCover(){
