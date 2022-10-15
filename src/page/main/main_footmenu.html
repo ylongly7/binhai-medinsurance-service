@@ -1,15 +1,15 @@
  
    
     <div class="weui-flex  " id="footmenucontent">
-        <div class="weui-flex__item" onclick="window.location.href='regulation.html'">
+        <div class="weui-flex__item" onclick="__footmenu_jumpto(0)">
             <a href="javascript:;" role="button" class="weui-btn weui-btn_default bottombtn bottombtn_reg"
             
             id="js_btn1">管理制度</a>
         </div>
-        <div class="weui-flex__item"  onclick="window.location.href='view_reg_tel.html'">
+        <div class="weui-flex__item"  onclick="__footmenu_jumpto(1)">
             <a href="javascript:;" role="button" class="weui-btn weui-btn_default bottombtn bottombtn_tel"
             
-            id="js_btn2">监督电话</a>
+            id="js_btn2">咨询监督电话</a>
         </div>
         <!-- <div class="weui-flex__item">
             <a href="javascript:;" role="button" class="weui-btn weui-btn_default bottombtn" id="js_btn3">3</a>
@@ -50,3 +50,16 @@
         background-color:#ffe5dbae
     }
 </style>
+<script>
+    function __footmenu_jumpto(i){
+        switch(i){
+            case 0:
+                window.location.href=`regulation.html?v=${Math.random()}`
+            break;
+            case 1:
+                window.location.href=`view_reg_tel.html?v=${Math.random()}`
+            break;
+        }
+    }
+
+</script>
