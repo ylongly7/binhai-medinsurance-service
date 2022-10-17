@@ -22,24 +22,41 @@
         <img class="weui-article" src="static/img/circle-fu.png" id="circleimg"> </img>
         </div>
  
+
         <div class="weui-form-preview mytelpanel">
-            <div role="option" class=" ">
-                <label class="  drugstorename" id="drugstorename滨海县医疗保险基金管理中心" style="display: none;">滨海县医疗保险基金管理中心</label>
+            
+            <div role="option" aria-labelledby="p4 js_a11y_comma p5 js_a11y_comma p6" class="weui-form-preview__bd">
+                
+                <div id="p5" class="weui-form-preview__item">
+                    <label class="weui-form-preview__label  " style="width: 40%;font-size: larger;color: black;">咨询服务电话</label>
+                    <a class="weui-form-preview__value mylabel tellabel" href="tel:0515-84235895">0515-84235895</a>
+                </div>
+               
+               
                  
             </div>
-            <div role="option" aria-labelledby="p4 js_a11y_comma p5 js_a11y_comma p6" class="weui-form-preview__bd">
+            
+        </div>
 
+        <div class="weui-form-preview mytelpanel">
+            
+            <div role="option" aria-labelledby="p4 js_a11y_comma p5 js_a11y_comma p6" class="weui-form-preview__bd">
+                
+                <div id="p5" class="weui-form-preview__item">
+                    <label class="weui-form-preview__label mylabellarge">监督电话</label>
+                </div>
+               
+               
                 <div id="p5" class="weui-form-preview__item">
                     <label class="weui-form-preview__label mylabel">滨海县医保中心</label>
                     <a class="weui-form-preview__value mylabel tellabel" href="tel:0515-68112806">0515-68112806</a>
                 </div>
-
+                
                 <div id="p4" class="weui-form-preview__item">
-                    
                     <label class="weui-form-preview__label mylabel">滨海县医保局</label>
                     <a class="weui-form-preview__value mylabel tellabel" href="tel:0515-89191000">0515-89191000</a>
                 </div>
-               
+              
                 <div id="p5" class="weui-form-preview__item" style="display: none;">
                     <label class="weui-form-preview__label mylabel" style="display: none;">地址</label>
                     <a class="weui-form-preview__value mylabel tellabel" href="tel:0515-68112805">0515-68112805</a>
@@ -73,6 +90,22 @@ body{
 .mylabel{
     font-size: medium;
     width: 40%;
+}
+.mylabellarge{
+    font-size: large;
+    width: 100%;
+    text-indent: 0em;
+    color: black;
+}
+.mylabellarge::after{
+    content:"";
+    display: block;
+    
+    
+    left: 0px;
+    width:  100%;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.144);
 }
 .tellabel{
     color: blue;
