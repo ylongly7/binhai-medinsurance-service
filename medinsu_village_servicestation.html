@@ -112,15 +112,23 @@
         for(var k in village_service_station){
             let dat = village_service_station[k]
            // console.log(dat)
-            let s1 = ss.format({
+            // let s1 = ss.format({
+            //     "0":dat["name"],             
+            //     "1":dat["tel"],                
+            //     "2":dat["street"]+dat["address"],
+            //     "3":dat["tel"],
+            //     "k":dat["name"],
+            //     "idx":k
+            //     }
+            //     )
+            let s1 = __strFormat(ss,{
                 "0":dat["name"],             
                 "1":dat["tel"],                
                 "2":dat["street"]+dat["address"],
                 "3":dat["tel"],
                 "k":dat["name"],
                 "idx":k
-                }
-                )
+                })
             ret = ret+s1
         }
 

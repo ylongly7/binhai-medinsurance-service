@@ -43,7 +43,15 @@ String.prototype.format = function(kv) {
     }
     return formatted;
 };
- 
+
+function __strFormat(ss,kv){
+	var formatted = ss;
+	for( var k in kv ) {
+		var reg = new RegExp("\\{"+k+"\\}","g")		 
+        formatted = formatted.replaceAll (reg, kv[k]);
+    }
+	return formatted;
+}
 
 function getUrlParam(name)
 {
