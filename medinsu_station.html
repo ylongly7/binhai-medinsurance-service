@@ -61,9 +61,9 @@
    
     </div>
 <script>
-    let dataId = getUrlParam("dataId")
+    var dataId = getUrlParam("dataId")
     console.log(dataId)
-    let stationdata = medinsu_data_raw[dataId]
+    var stationdata = medinsu_data_raw[dataId]
     console.log(dataId, stationdata)
     $("#slogan").load("src/page/medinsu_station/slogan.html"+`?v=${Math.random()}` , function(){
        // $("#station_slogan").html(stationdata["slogan"])  
@@ -87,7 +87,7 @@
 
     })
     $("#desc_img").load("src/page/medinsu_station/imggallery.html"+`?v=${Math.random()}` , function(){
-      let _imgs = JSON.parse( stationdata["imgs"])
+      var _imgs = JSON.parse( stationdata["imgs"])
       var imgs= []
       for(var i=0;i<_imgs.length;i++){
         imgs.push("static/img/station_img/"+_imgs[i])
@@ -108,8 +108,8 @@
     
     
     $("#station_map").load("src/page/medinsu_station/station_map.html"+`?v=${Math.random()}` , function(){
-      let postr = stationdata["point"]
-      let postrarr = postr.split(",")
+      var postr = stationdata["point"]
+      var postrarr = postr.split(",")
       console.log(postrarr)
       initWithPoint(parseFloat(postrarr[0]), parseFloat(postrarr[1]))
       
@@ -128,8 +128,8 @@
       $("#station_info").html(html)
       $("#drugstorename"+stationdata["name"]).hide()
 
-      let postr = stationdata["point"]
-      let postrarr = postr.split(",")    
+      var postr = stationdata["point"]
+      var postrarr = postr.split(",")    
      
       $("#stmap_para_lng").html(postrarr[0])
       $("#stmap_para_lat").html(postrarr[1])

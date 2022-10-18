@@ -26,7 +26,7 @@
 
     <div class="weui-article my_article">
     <h1>镇级医保工作站地图导引</h1>
-    <embed src="static/img/town_stations.svg" type="image/svg+xml" id="map_stations" />
+    <embed src="static/img/town_stations.svg" type="image/svg+xml" id="map_stations"  onload="svgstateChange(this)"/>
     </div>
 
     <div class="weui-cell weui-cell_active myweui-cell navtip"  >
@@ -62,13 +62,14 @@
     </style>
 
     <script>
-        let _jumpto =function(key){
+        var _jumpto =function(key){
                        window.location.href="medinsu_station.html?dataId="+ (escape(key))+`&v=${Math.random()}`;
       }
-        window.onload=function(){
-            let svgDOC = document.getElementById('map_stations').getSVGDocument(); 
+        var bindSVG = function(){
+            var svgDOC = document.getElementById('map_stations').getSVGDocument(); 
             //console.log(svgDOC)
-            let svgObj = $(svgDOC).children('svg')[0];
+            var svgObj = $(svgDOC).children('svg')[0];
+            console.log(svgObj)
             for(var k in medinsu_data_raw){
                 //console.log(k)
                 if(k=="县医保服务大厅"){
@@ -77,12 +78,21 @@
                 var ele = svgDOC.getElementById("g-"+k);
                 ele.addEventListener("click", (function(e) {
                         //console.log("click",k);
-                        let k1 = k                        
+                        var k1 = k                        
                         return function(){
                             _jumpto(k1)
                         }
                     })(k));
             }          
+        }
+        window.onload=function(){
+            bindSVG()
+        }
+        window.onfocus= function(){
+            bindSVG()
+        }
+        function svgstateChange(obj){
+            bindSVG()
         }
         
     </script>
