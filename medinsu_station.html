@@ -119,9 +119,9 @@
     $("#station_info") .load("src/page/medinsu_station/station_info.html"+`?v=${Math.random()}`,function(html){
      
       html = html.format({
-      0:stationdata["name"],
-      1:stationdata["phone"],
-      2: stationdata["address"] 
+      "0":stationdata["name"],
+      "1":stationdata["phone"],
+      "2": stationdata["address"] 
          
       }
         )

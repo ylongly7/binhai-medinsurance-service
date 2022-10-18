@@ -2,13 +2,13 @@
     function makeDrugStoreList(ss){
         var ret = ""
         for(var k in village_drugstore){
-            let dat = village_drugstore[k]
+            var dat = village_drugstore[k]
            // console.log(dat)
-            let s1 = ss.format({
-                0:dat["name"],             
-                1:dat["tel"],                
-                2:dat["address"],
-                3:dat["tel"],
+            var s1 = ss.format({
+                "0":dat["name"],             
+                "1":dat["tel"],                
+                "2":dat["address"],
+                "3":dat["tel"],
                 "k":dat["name"],
                 "idx":k
                 }
@@ -23,15 +23,15 @@
     
         function bindNavBtnClick(dat){
             for(var k in dat){
-                let id = "#naviToBtn"+k
+                var id = "#naviToBtn"+k
                 $(id).on("click", (function( pa){
-                    let clouser = function( ){
+                    var clouser = function( ){
                         var $iosActionsheet = $('#iosActionsheet');
                         var $iosMask = $('#iosMask');
                         
                         console.log( pa)
-                        let posstr = dat[pa]["point"]
-                        let postrarr = posstr.split(",")      
+                        var posstr = dat[pa]["point"]
+                        var postrarr = posstr.split(",")      
                         $("#stmap_para_lng").html(postrarr[0])
                         $("#stmap_para_lat").html(postrarr[1])
                         $("#stmap_para_address").html( dat[pa]["name"])

@@ -1,9 +1,9 @@
-let initGallery = function(id,imgs){
-    let arr =imgs
+var initGallery = function(id,imgs){
+    var arr =imgs
     console.log(arr)
-    let intv = 3000
+    var intv = 3000
     setInterval(() => {
-        let a1 = arr.shift()
+        var a1 = arr.shift()
         arr.push(a1)
         //console.log(a1)
         

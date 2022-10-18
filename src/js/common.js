@@ -26,7 +26,7 @@ __serviceTypeEnterAnim=function(){
 	for(var i=0;i<5;i++){		
         $("#main_service_type"+(i+1)).css({"display":"none"})
 	}
-	let factor = [1,0.95,0.92,0.88,0.8]
+	var factor = [1,0.95,0.92,0.88,0.8]
 	for(var i=0;i<5;i++){		
         $("#main_service_type"+(i+1)).fadeIn(220*factor[i]*(i+1))
 		console.log("#main_service_type"+(i+1))
@@ -38,7 +38,7 @@ __serviceTypeEnterAnim=function(){
 String.prototype.format = function(kv) {
     var formatted = this;
     for( var k in kv ) {
-		let reg = new RegExp("\\{"+k+"\\}","g")		 
+		var reg = new RegExp("\\{"+k+"\\}","g")		 
         formatted = formatted.replaceAll (reg, kv[k]);
     }
     return formatted;
@@ -91,50 +91,52 @@ function __openBaiduMap(lng, lat, address,idx) {
 	if (idx==0){
 		lng = bd09togcj02[0]
 		lat = bd09togcj02[1]
-		let web_url = `http://apis.map.qq.com/uri/v1/marker?marker=coord:${lat},${lng};addr:${address}`
+		var web_url = `http://apis.map.qq.com/uri/v1/marker?marker=coord:${lat},${lng};addr:${address}`
 		 
 		window.location.href = web_url;
-		return 
+		 
 	}
-	if(idx==2){
+	else if(idx==2){
 		lng = bd09togcj02[0]
 		lat = bd09togcj02[1]
-		let web_url = `http://uri.amap.com/marker?position=${lng},${lat}&name=${address}&coordinate=gaode&callnative=1`
+		var web_url = `http://uri.amap.com/marker?position=${lng},${lat}&name=${address}&coordinate=gaode&callnative=1`
 		window.location.href = web_url;
-		return
+		 
 	}
-	var geolocation = new BMapGL.Geolocation();
-	geolocation.getCurrentPosition(function (result) {
-		if (this.getStatus() == BMAP_STATUS_SUCCESS) {
-			var queryString = `origin=latlng:${result.point.lat},${result.point.lng}|name:我的位置&destination=latlng:${lat},${lng}|name:${address}&mode=driving&coord_type=bd09ll`;
-			var app_url = `baidumap://map/direction?${queryString}`;
+	else{
+		var geolocation = new BMapGL.Geolocation();
+		geolocation.getCurrentPosition(function (result) {
+			if (this.getStatus() == BMAP_STATUS_SUCCESS) {
+				var queryString = `origin=latlng:${result.point.lat},${result.point.lng}|name:我的位置&destination=latlng:${lat},${lng}|name:${address}&mode=driving&coord_type=bd09ll`;
+				var app_url = `baidumap://map/direction?${queryString}`;
 
-			var web_url = `http://api.map.baidu.com/direction?${queryString}&region=中国&output=html`;
-			//https://link.zhihu.com/?target=http%3A//api.map.baidu.com/marker%3Flocation%3D
-			// if (idx==0){
-			// 	web_url = `http://apis.map.qq.com/uri/v1/marker?marker=coord:${lat},${lng};addr:${address}`
-			// }
-			// if(idx==2){
-			// 	web_url = `http://uri.amap.com/marker?position=${lng},${lat}&name=${address}&coordinate=gaode&callnative=1`
-			// }
+				var web_url = `http://api.map.baidu.com/direction?${queryString}&region=中国&output=html`;
+				//https://link.zhihu.com/?target=http%3A//api.map.baidu.com/marker%3Flocation%3D
+				// if (idx==0){
+				// 	web_url = `http://apis.map.qq.com/uri/v1/marker?marker=coord:${lat},${lng};addr:${address}`
+				// }
+				// if(idx==2){
+				// 	web_url = `http://uri.amap.com/marker?position=${lng},${lat}&name=${address}&coordinate=gaode&callnative=1`
+				// }
 
-			//尝试唤起百度地图App
-			window.location.href = web_url;
+				//尝试唤起百度地图App
+				window.location.href = web_url;
+				
 			
-		
-		} else {
-				alert("获取不到定位，请检查手机设置！");
-		}
-	});
+			} else {
+					alert("获取不到定位，请检查手机设置！");
+			}
+			});
+	}
 }
 
 
 
 // 加密
 function encryptByAES (data) {
-	let aeskey="0123456789abcdef"
-	let key = CryptoJS.enc.Utf8.parse(aeskey);
-	let encryptData = CryptoJS.AES.encrypt(data, key, {
+	var aeskey="0123456789abcdef"
+	var key = CryptoJS.enc.Utf8.parse(aeskey);
+	var encryptData = CryptoJS.AES.encrypt(data, key, {
 		mode: CryptoJS.mode.ECB,
 		padding: CryptoJS.pad.Pkcs7
 	});
@@ -143,9 +145,9 @@ function encryptByAES (data) {
 
 // 解密
 function decryptedByAES (data){
-	let aeskey = "0123456789abcdef";
-	let key = CryptoJS.enc.Utf8.parse(aeskey);
-	let decryptedData =  CryptoJS.AES.decrypt(data, key, {
+	var aeskey = "0123456789abcdef";
+	var key = CryptoJS.enc.Utf8.parse(aeskey);
+	var decryptedData =  CryptoJS.AES.decrypt(data, key, {
 		mode: CryptoJS.mode.ECB,
 		padding: CryptoJS.pad.Pkcs7
 	});
