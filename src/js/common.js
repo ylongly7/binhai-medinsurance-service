@@ -39,7 +39,7 @@ String.prototype.format = function(kv) {
     var formatted = this;
     for( var k in kv ) {
 		var reg = new RegExp("\\{"+k+"\\}","g")		 
-        formatted = formatted.replaceAll (reg, kv[k]);
+        formatted = formatted.replace (reg, kv[k]);
     }
     return formatted;
 };
