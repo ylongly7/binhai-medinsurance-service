@@ -63,7 +63,7 @@
 
     <script>
         var _jumpto =function(key){
-                       window.location.href="medinsu_station.html?dataId="+ (escape(key))+`&v=${Math.random()}`;
+            window.location.href=`medinsu_station.html?dataId=${(escape(key))}&v=${Math.random()}`;
       }
         var bindSVG = function(){
             var svgDOC = document.getElementById('map_stations').getSVGDocument(); 

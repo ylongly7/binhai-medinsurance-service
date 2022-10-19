@@ -29,6 +29,8 @@
             wh = __getClientWH()
             $("#bgimg").height("100%")
             $("#startbtn").css("display","block")
+            var root = getRootPath()
+            console.log("root", root)
         }  
         enter = function(){
             window.location.href = `main.html?v=${Math.random()}`;
