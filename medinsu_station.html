@@ -90,7 +90,7 @@
       var _imgs = JSON.parse( stationdata["imgs"])
       var imgs= []
       for(var i=0;i<_imgs.length;i++){
-        imgs.push("static/img/station_img/"+_imgs[i]+`?v=${Math.random()}`)
+        imgs.push("static/img/station_img/"+_imgs[i]+``)
       }
       initGallery("medinsu_station_gallery", imgs)
     })
