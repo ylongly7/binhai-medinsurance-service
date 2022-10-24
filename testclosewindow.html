@@ -19,38 +19,19 @@
     <div class="container" id="container"></div>
     
 
-    <!-- <div   id="bgimg" ref="bgimg">	 
-        <a href="javascript:" class="weui-btn weui-btn_primary" ref="startbtn" id="startbtn" onclick='enter()' >点击查看详情</a>	 
-    </div> -->
-    <p ><a href="medinsu_station.html?v=1001&dataId=%u53BF%u533B%u4FDD%u670D%u52A1%u5927%u5385" >跳转到医保服务大厅</a></p>
-    <p > <a  href="https://gitee.com/">跳转到gitee</a></p>
-    <p > <a href="https://www.baidu.com/">跳转到百度</a></p>
-    <p > <a href="https://www.zhihu.com/">跳转到知乎</a> </p>
-    <br>
-    <p > <a href="http://yb.wxapi.yccsfw.com/blade-auth/oauth/render/WECHAT_MP/check">跳转到便民服务</a> </p>
-    <br>
-    <p > <a href="testclosewindow.html">跳转到关闭窗口页面</a> </p>
+    
+    
+    <p >   返回将关闭浏览器窗口</a> </p>
     <script>
-        window.onload=function(){
-            wh = __getClientWH()
-            $("#bgimg").height("100%")
-            $("#startbtn").css("display","block")
-            var root = getRootPath()
-            console.log("root", root)
-        }  
-        enter = function(){
-            window.location.href = `main.html`;
-        } 
+        function testclose(){          
+            window.close();
+        }
 
-        
-        
-        // setTimeout(function(){
-        //     $("body").fadeOut(300)
-        // },2700)
-        // setTimeout(function(){
-        //     enter()
-        // },3000)
-        
+        window.addEventListener('popstate', function (e) {
+                alert('监听到了返回');
+                testclose()
+            });
+
     </script>
 
     <style>
